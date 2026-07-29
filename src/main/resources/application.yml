@@ -1,0 +1,42 @@
+# 应用的基础信息
+spring:
+  application:
+    # 应用名称，会显示在日志、注册中心等处，也常用于配置区分
+    name: czf-ai-agent
+
+
+
+# 内嵌 Web 服务器（Tomcat）的相关配置
+server:
+  # 项目启动后监听的端口号，浏览器/接口访问时用它
+  port: 8123
+  servlet:
+    # 上下文路径（统一前缀）。配置后所有接口都要加 /api，
+    # 例如：http://localhost:8123/api/xxx
+    context-path: /api
+
+
+
+# ===== 接口文档相关配置（OpenAPI 标准，Swagger 是它的实现之一）=====
+# springdoc-openapi：根据代码自动生成 OpenAPI 文档
+springdoc:
+  swagger-ui:
+    # Swagger 原生界面地址：http://localhost:8123/api/swagger-ui.html
+    path: /swagger-ui.html
+    # 左侧标签、接口列表按字母顺序排序，方便查找
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    # 接口文档的 JSON 数据地址（给程序/工具读取用）
+    path: /v3/api-docs
+  group-configs:
+    # 文档分组配置（这里只有一个默认分组）
+    - group: 'default'
+      paths-to-match: '/**'        # 匹配所有路径下的接口
+      packages-to-scan: com.czf.czfaiagent.controller  # 只扫描该包下的控制器
+
+# knife4j：在 Swagger 基础上提供更友好的中文文档界面
+knife4j:
+  enable: true          # 开启 Knife4j 增强功能
+  setting:
+    language: zh_cn     # 文档界面使用简体中文

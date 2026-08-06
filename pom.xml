@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.1.0</version>
+        <version>3.4.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.czf</groupId>
@@ -29,6 +29,33 @@
     <properties>
         <java.version>21</java.version>
     </properties>
+
+    <!-- ============================================================
+         dependencyManagement（依赖版本管理区）
+         通过引入 BOM（Bill Of Materials）统一约束 Spring AI 相关依赖的版本，
+         这样下面 dependencies 里引用 spring-ai-* 时就不用逐个写 <version>。
+         ============================================================ -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring AI Alibaba 的 BOM：统一管理其所有 starter 的版本 -->
+            <dependency>
+                <groupId>com.alibaba.cloud.ai</groupId>
+                <artifactId>spring-ai-alibaba-bom</artifactId>
+                <version>1.0.0.2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Spring AI 官方 BOM：统一管理 spring-ai-* 核心依赖的版本 -->
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>1.0.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <!-- ============================================================
          dependencies（依赖区）
          下面按「用途」分成几个区块，每块前都有说明。
@@ -37,11 +64,11 @@
     <dependencies>
 
         <!-- ========== 1. Web 框架核心 ========== -->
-        <!-- Spring Boot Web MVC：构建 Web 应用 / HTTP 接口的基础包，
+        <!-- Spring Boot Web：构建 Web 应用 / HTTP 接口的基础包，
              内置 Tomcat 服务器和 Spring MVC，是所有接口的起点。 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webmvc</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <!-- ========== 2. 开发工具类库 ========== -->
@@ -70,7 +97,29 @@
             <groupId>com.alibaba</groupId>
             <artifactId>dashscope-sdk-java</artifactId>
             <version>2.19.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-simple</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
+        <!-- Spring AI Alibaba（DashScope 接入）：在 Spring AI 基础上封装，
+             用统一 API 调用通义千问等阿里大模型。
+             版本由上方 spring-ai-alibaba-bom 统一管理，这里无需写 <version>。 -->
+        <dependency>
+            <groupId>com.alibaba.cloud.ai</groupId>
+            <artifactId>spring-ai-alibaba-starter-dashscope</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/dev.langchain4j/langchain4j-community-dashscope -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-community-dashscope</artifactId>
+            <version>1.0.0-beta2</version>
+        </dependency>
+
 
         <!-- ========== 4. 接口文档 ========== -->
         <!-- Knife4j：基于 OpenAPI3 的接口文档工具，启动后访问 /doc.html
@@ -82,11 +131,11 @@
         </dependency>
 
         <!-- ========== 5. 测试 ========== -->
-        <!-- Web MVC 测试起步包：写接口自动化测试用，<scope>test</scope>
+        <!-- Spring Boot 测试起步包：写接口/单元自动化测试用，<scope>test</scope>
              表示只在测试阶段生效，不会打进最终运行包。 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webmvc-test</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -151,5 +200,40 @@
             </plugin>
         </plugins>
     </build>
+
+    <!-- ============================================================
+         repositories（仓库配置区）
+         Spring AI 相关依赖包含里程碑/快照版本，默认中央仓库没有，
+         必须额外声明这些仓库才能下载成功。
+         ============================================================ -->
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <name>Central Portal Snapshots</name>
+            <id>central-portal-snapshots</id>
+            <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>

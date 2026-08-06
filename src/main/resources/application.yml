@@ -3,6 +3,9 @@ spring:
   application:
     # 应用名称，会显示在日志、注册中心等处，也常用于配置区分
     name: czf-ai-agent
+  # 指定application-local.yml作为当前被激活的配置文件
+  profiles:
+    active: local
 
 
 

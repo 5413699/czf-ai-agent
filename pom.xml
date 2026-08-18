@@ -209,6 +209,22 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- 测试执行插件：消除 Mockito 动态加载 agent 的 JDK 警告 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <argLine>
+                        -javaagent:${settings.localRepository}/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar
+                    </argLine>
+                </configuration>
+            </plugin>
+
+
+
+
+
         </plugins>
     </build>
 

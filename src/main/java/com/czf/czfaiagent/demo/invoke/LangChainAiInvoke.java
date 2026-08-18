@@ -13,6 +13,7 @@ public class LangChainAiInvoke {
 //                .build();
 //        String answer = qwenChatModel.chat("我是程序员鱼皮，这是编程导航 codefather.cn 的 AI 超级智能体原创项目");
 
+        // 配置自定义模型
         ChatLanguageModel openAiChatModel = OpenAiChatModel.builder()
                 .baseUrl("https://nowcoding.ai/v1")
                 .apiKey(TestApiKey.OPENAI_API_KEY)

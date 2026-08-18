@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  */
 // 取消注释后，项目启动时会执行
 // 同时演示 阿里 dashscope + 自建 OpenAI 兼容 API）
-@Component
+//@Component
 public class SpringAiAiInvoke implements CommandLineRunner {
 
     @Resource(name = "dashscopeChatModel")

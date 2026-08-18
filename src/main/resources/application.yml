@@ -7,7 +7,13 @@ spring:
   profiles:
     active: local
 
-
+# 提示词配置
+ai:
+  prompts:
+    sfc-professor:
+      location: classpath:/prompts/sfc-professor.md
+    tomato-assistant:
+      location: classpath:/prompts/tomato-assistant.md
 
 # 内嵌 Web 服务器（Tomcat）的相关配置
 server:

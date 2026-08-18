@@ -25,3 +25,5 @@ spring:
        # 不使用 OpenAI Embedding 时可关闭
        embedding:
          enabled: false
+
+

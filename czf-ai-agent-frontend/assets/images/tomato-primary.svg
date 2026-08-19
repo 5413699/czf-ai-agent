@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="番茄">
+  <path fill="#2d8a66" d="M65 28c-9-12-23-15-34-10 8 2 14 7 18 14-12-3-23 1-29 9 10-2 19 1 26 8l19-21Z"/>
+  <path fill="#ef554b" d="M64 31c32 0 52 22 52 49 0 28-22 44-52 44S12 108 12 80c0-27 20-49 52-49Z"/>
+  <path fill="#ff7567" d="M37 50c-9 7-14 18-14 31 0 5 1 10 3 14 2-21 12-36 30-45-7-3-13-3-19 0Z" opacity=".72"/>
+  <circle cx="48" cy="73" r="4" fill="#9f302f"/><circle cx="80" cy="73" r="4" fill="#9f302f"/>
+  <path d="M48 91c9 8 23 8 32 0" fill="none" stroke="#9f302f" stroke-width="5" stroke-linecap="round"/>
+</svg>

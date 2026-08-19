@@ -1,0 +1,1168 @@
+[
+  {
+    "name": "JAVA基础",
+    "addedDate": "2025-06-20T07:05:25.744Z",
+    "courses": [
+      {
+        "name": "JAVA基础教程",
+        "url": "https://www.bilibili.com/video/BV1PY411e7J6/?spm_id_from=333.788.player.switch&vd_source=2e8de9d0ba22afea9ef4fdf76978df42&p=105",
+        "videos": [
+          {
+            "title": "01.Java新版视频教程简介",
+            "duration": "07:57",
+            "completed": true
+          },
+          {
+            "title": "02-Java语言概述-课程目录说明",
+            "duration": "06:23",
+            "completed": true
+          },
+          {
+            "title": "03-Java语言概述-Java基础全程学习路线",
+            "duration": "11:55",
+            "completed": true
+          },
+          {
+            "title": "04-Java语言概述-抽丝剥茧话Java",
+            "duration": "23:20",
+            "completed": true
+          },
+          {
+            "title": "05-Java语言概述-Java工程师全程学习路线",
+            "duration": "15:26",
+            "completed": true
+          },
+          {
+            "title": "06-Java语言概述-计算机硬件的介绍",
+            "duration": "07:13",
+            "completed": true
+          },
+          {
+            "title": "07-Java语言概述-常见的DOS命令",
+            "duration": "20:30",
+            "completed": true
+          },
+          {
+            "title": "08-Java语言概述-不同编程语言的介绍",
+            "duration": "24:27",
+            "completed": true
+          },
+          {
+            "title": "09-Java语言概述-Java相关历史",
+            "duration": "15:45",
+            "completed": true
+          },
+          {
+            "title": "10-Java语言概述-JDK的选择和下载",
+            "duration": "10:06",
+            "completed": true
+          },
+          {
+            "title": "11-Java语言概述-JDK8的安装与path环境变量的配置",
+            "duration": "14:09",
+            "completed": true
+          },
+          {
+            "title": "12-Java语言概述-JDK17的安装和path环境变量的配置",
+            "duration": "05:53",
+            "completed": true
+          },
+          {
+            "title": "13-Java语言概述-HelloWorld的编写和执行",
+            "duration": "16:47",
+            "completed": true
+          },
+          {
+            "title": "14-Java语言概述-第一个HelloWorld程序的总结",
+            "duration": "34:12",
+            "completed": true
+          },
+          {
+            "title": "15-Java语言概述-单行注释和多行注释的使用",
+            "duration": "14:24",
+            "completed": true
+          },
+          {
+            "title": "16-Java语言概述-文档注释的使用与API文档的说明",
+            "duration": "12:32",
+            "completed": true
+          },
+          {
+            "title": "17-Java语言概述-Java语言的特点和JVM的功能",
+            "duration": "15:14",
+            "completed": true
+          },
+          {
+            "title": "18-Java语言概述-两个案例的代码实现",
+            "duration": "09:08",
+            "completed": true
+          },
+          {
+            "title": "19-Java语言概述-第01章复习与企业真题",
+            "duration": "30:32",
+            "completed": true
+          },
+          {
+            "title": "20-Java语言概述-学习的方法和经验",
+            "duration": "22:43",
+            "completed": true
+          },
+          {
+            "title": "21-变量与运算符-关键字的使用",
+            "duration": "05:38",
+            "completed": true
+          },
+          {
+            "title": "22-变量与运算符-标识符的使用",
+            "duration": "24:32",
+            "completed": true
+          },
+          {
+            "title": "23-变量与运算符-变量的基本使用",
+            "duration": "25:00",
+            "completed": true
+          },
+          {
+            "title": "24-变量与运算符-整型数据类型的使用",
+            "duration": "11:16",
+            "completed": true
+          },
+          {
+            "title": "25-变量与运算符-浮点类型的使用及练习",
+            "duration": "19:32",
+            "completed": true
+          },
+          {
+            "title": "26-变量与运算符-字符类型的使用",
+            "duration": "16:18",
+            "completed": true
+          },
+          {
+            "title": "27-变量与运算符-布尔类型的使用",
+            "duration": "06:15",
+            "completed": true
+          },
+          {
+            "title": "28-变量与运算符-基本数据类型变量间的自动类型提升规则",
+            "duration": "26:45",
+            "completed": true
+          },
+          {
+            "title": "29-变量与运算符-基本数据类型变量间的强制类型转换规则",
+            "duration": "18:24",
+            "completed": true
+          },
+          {
+            "title": "30-变量与运算符-String类的基本使用",
+            "duration": "22:00",
+            "completed": true
+          },
+          {
+            "title": "31-变量与运算符-String类的课后练习",
+            "duration": "12:52",
+            "completed": true
+          },
+          {
+            "title": "32-变量与运算符-常见进制的理解与二进制转十进制操作",
+            "duration": "31:13",
+            "completed": true
+          },
+          {
+            "title": "33-变量与运算符-十进制转二进制_其它进制间的相互转换",
+            "duration": "12:09",
+            "completed": true
+          },
+          {
+            "title": "34-变量与运算符-算术运算符的使用",
+            "duration": "39:49",
+            "completed": true
+          },
+          {
+            "title": "35-变量与运算符-赋值运算符的使用",
+            "duration": "24:02",
+            "completed": true
+          },
+          {
+            "title": "36-变量与运算符-比较运算符的使用",
+            "duration": "15:36",
+            "completed": true
+          },
+          {
+            "title": "37-变量与运算符-逻辑运算符的使用",
+            "duration": "30:01",
+            "completed": true
+          },
+          {
+            "title": "38-变量与运算符-位运算符的使用",
+            "duration": "36:13",
+            "completed": true
+          },
+          {
+            "title": "39-变量与运算符-条件运算符的使用",
+            "duration": "27:45",
+            "completed": true
+          },
+          {
+            "title": "40-变量与运算符-第02章复习与企业真题",
+            "duration": "54:49",
+            "completed": true
+          },
+          {
+            "title": "41-流程控制-if-else结构的基本使用",
+            "duration": "30:23",
+            "completed": true
+          },
+          {
+            "title": "42-流程控制-if-else结构的嵌套使用及课后练习",
+            "duration": "19:01",
+            "completed": true
+          },
+          {
+            "title": "43-流程控制-使用Scanner类从键盘获取数据",
+            "duration": "29:35",
+            "completed": true
+          },
+          {
+            "title": "44-流程控制-如何获取一个随机数",
+            "duration": "11:50",
+            "completed": true
+          },
+          {
+            "title": "45-流程控制-switch-case的基本使用",
+            "duration": "29:38",
+            "completed": true
+          },
+          {
+            "title": "46-流程控制-switch-case的课后练习1,2",
+            "duration": "45:34",
+            "completed": true
+          },
+          {
+            "title": "47-流程控制-for循环结构的基本使用",
+            "duration": "26:22",
+            "completed": true
+          },
+          {
+            "title": "48-流程控制-for循环结构的课后练习",
+            "duration": "25:56",
+            "completed": true
+          },
+          {
+            "title": "49-流程控制-while循环结构的使用及课后练习",
+            "duration": "32:28",
+            "completed": true
+          },
+          {
+            "title": "50-流程控制-do-while循环的使用及课后练习",
+            "duration": "36:22",
+            "completed": true
+          },
+          {
+            "title": "51-流程控制-无限循环结构的使用",
+            "duration": "14:59",
+            "completed": true
+          },
+          {
+            "title": "52-流程控制-嵌套循环的使用",
+            "duration": "25:42",
+            "completed": true
+          },
+          {
+            "title": "53-流程控制-使用嵌套for循环显示菱形、九九乘法表",
+            "duration": "15:45",
+            "completed": true
+          },
+          {
+            "title": "54-流程控制-关键字break和continue的使用",
+            "duration": "20:25",
+            "completed": true
+          },
+          {
+            "title": "55-流程控制-通过质数的输出体会算法的魅力",
+            "duration": "37:57",
+            "completed": true
+          },
+          {
+            "title": "56-流程控制-项目一：谷粒记账软件的演示及代码实现",
+            "duration": "40:59",
+            "completed": true
+          },
+          {
+            "title": "57-流程控制-企业中项目的研发流程",
+            "duration": "21:07",
+            "completed": true
+          },
+          {
+            "title": "58-流程控制-第03章复习与企业真题",
+            "duration": "34:20",
+            "completed": true
+          },
+          {
+            "title": "59-IDEA开发工具-IDEA的介绍、卸载、安装与注册",
+            "duration": "25:48",
+            "completed": true
+          },
+          {
+            "title": "60-IDEA开发工具-HelloWorld的编写与相关必备设置",
+            "duration": "41:27",
+            "completed": true
+          },
+          {
+            "title": "61-IDEA开发工具-工程、模块、包、类的理解_第04章复习与企业真题",
+            "duration": "40:54",
+            "completed": true
+          },
+          {
+            "title": "62-数组-数组的概述",
+            "duration": "28:23",
+            "completed": true
+          },
+          {
+            "title": "63-数组-一维数组的初始化、遍历与元素默认初始化值",
+            "duration": "40:47",
+            "completed": true
+          },
+          {
+            "title": "64-数组-一维数组的内存解析",
+            "duration": "25:14",
+            "completed": true
+          },
+          {
+            "title": "65-数组-一维数组的课后练习1-3",
+            "duration": "28:15",
+            "completed": true
+          },
+          {
+            "title": "66-数组-二维数组的初始化、遍历与元素默认初始化值",
+            "duration": "45:28",
+            "completed": true
+          },
+          {
+            "title": "67-数组-二维数组的内存解析与课后练习1-3",
+            "duration": "40:49",
+            "completed": true
+          },
+          {
+            "title": "68-数组-常见算法操作：特征值计算、数组赋值与复制",
+            "duration": "52:40",
+            "completed": true
+          },
+          {
+            "title": "69-数组-常见算法操作：数组的反转、扩容与缩容",
+            "duration": "36:35",
+            "completed": true
+          },
+          {
+            "title": "70-数组-常见算法操作：查找、冒泡排序、快速排序",
+            "duration": "01:04:34",
+            "completed": true
+          },
+          {
+            "title": "71-数组-Arrays工具类的使用与数组中的常见异常",
+            "duration": "30:02",
+            "completed": true
+          },
+          {
+            "title": "72-数组-第05章复习与企业真题",
+            "duration": "32:43",
+            "completed": true
+          },
+          {
+            "title": "73-面向对象(基础)-面向对象的概述及两大要素：类与对象",
+            "duration": "33:10",
+            "completed": true
+          },
+          {
+            "title": "74-面向对象(基础)-类的实例化与对象的内存解析",
+            "duration": "52:39",
+            "completed": true
+          },
+          {
+            "title": "75-面向对象(基础)-成员变量与局部变量的对比及练习",
+            "duration": "01:01:32",
+            "completed": true
+          },
+          {
+            "title": "76-面向对象(基础)-方法的作用与方法的声明",
+            "duration": "56:06",
+            "completed": true
+          },
+          {
+            "title": "77-面向对象(基础)-方法的课后练习及内存解析",
+            "duration": "26:28",
+            "completed": true
+          },
+          {
+            "title": "78-面向对象(基础)-属性和方法的整体练习1-4",
+            "duration": "47:41",
+            "completed": true
+          },
+          {
+            "title": "79-面向对象(基础)-对象数组的使用及内存解析",
+            "duration": "37:31",
+            "completed": true
+          },
+          {
+            "title": "80-面向对象(基础)-方法应用1：方法的重载",
+            "duration": "30:20",
+            "completed": true
+          },
+          {
+            "title": "81-面向对象(基础)-方法应用2：可变个数形参的方法",
+            "duration": "23:07",
+            "completed": true
+          },
+          {
+            "title": "82-面向对象(基础)-方法应用3：方法值传递机制的剖析",
+            "duration": "01:08:34",
+            "completed": true
+          },
+          {
+            "title": "83-面向对象(基础)-方法应用4：递归方法",
+            "duration": "42:31",
+            "completed": true
+          },
+          {
+            "title": "84-面向对象(基础)-package与import关键字的使用",
+            "duration": "41:33",
+            "completed": true
+          },
+          {
+            "title": "85-面向对象(基础)-面向对象的特征一：封装性",
+            "duration": "46:14",
+            "completed": true
+          },
+          {
+            "title": "86-面向对象(基础)-封装性课后练习与几种不同权限修饰符的测试",
+            "duration": "37:15",
+            "completed": true
+          },
+          {
+            "title": "87-面向对象(基础)-类的成员之三：构造器的使用与练习1-3",
+            "duration": "01:01:07",
+            "completed": true
+          },
+          {
+            "title": "88-面向对象(基础)-实例变量赋值过程_JavaBean_UML类图",
+            "duration": "32:22",
+            "completed": true
+          },
+          {
+            "title": "89-面向对象(基础)-第06章复习与企业真题",
+            "duration": "57:08",
+            "completed": true
+          },
+          {
+            "title": "90-面向对象(进阶)-关键字this调用属性、方法、构造器",
+            "duration": "34:24",
+            "completed": true
+          },
+          {
+            "title": "91-面向对象(进阶)-this课后练习1,2",
+            "duration": "50:42",
+            "completed": true
+          },
+          {
+            "title": "92-面向对象(进阶)-项目二：拼电商客户管理系统的演示及代码实现",
+            "duration": "54:03",
+            "completed": true
+          },
+          {
+            "title": "93-面向对象(进阶)-面向对象的特征二：继承性",
+            "duration": "50:20",
+            "completed": true
+          },
+          {
+            "title": "94-面向对象(进阶)-继承性课后练习1,2与4种权限修饰的测试",
+            "duration": "32:50",
+            "completed": true
+          },
+          {
+            "title": "95-面向对象(进阶)-方法的重写规则及练习1,2",
+            "duration": "44:22",
+            "completed": true
+          },
+          {
+            "title": "96-面向对象(进阶)-关键字super调用父类属性、方法、构造器",
+            "duration": "40:48",
+            "completed": true
+          },
+          {
+            "title": "97-面向对象(进阶)-super的课后练习1-3与企业真题",
+            "duration": "38:27",
+            "completed": true
+          },
+          {
+            "title": "98-面向对象(进阶)-子类对象实例化的全过程",
+            "duration": "13:29",
+            "completed": true
+          },
+          {
+            "title": "99-面向对象(进阶)-面向对象的特征三：多态性",
+            "duration": "45:28",
+            "completed": true
+          },
+          {
+            "title": "100-面向对象(进阶)-向下转型与多态性课后练习1-4",
+            "duration": "01:13:00",
+            "completed": true
+          },
+          {
+            "title": "101-面向对象(进阶)-Object类及clone()、finalize()的理解",
+            "duration": "28:14",
+            "completed": true
+          },
+          {
+            "title": "102-面向对象(进阶)-equals()方法的使用及练习1-2",
+            "duration": "46:17",
+            "completed": true
+          },
+          {
+            "title": "103-面向对象(进阶)-toString()方法的使用及练习",
+            "duration": "23:59",
+            "completed": true
+          },
+          {
+            "title": "104-面向对象(进阶)-第07章复习与企业真题",
+            "duration": "52:36",
+            "completed": true
+          },
+          {
+            "title": "105-面向对象(高级)-关键字static修饰属性、方法",
+            "duration": "54:41",
+            "completed": false
+          },
+          {
+            "title": "106-面向对象(高级)-static的应用举例及练习1,2",
+            "duration": "21:15",
+            "completed": false
+          },
+          {
+            "title": "107-面向对象(高级)-单例设计模式与main()的理解",
+            "duration": "53:17",
+            "completed": false
+          },
+          {
+            "title": "108-面向对象(高级)-类的成员之四：代码块",
+            "duration": "35:25",
+            "completed": false
+          },
+          {
+            "title": "109-面向对象(高级)-小结：类中属性赋值的位置及过程",
+            "duration": "43:17",
+            "completed": false
+          },
+          {
+            "title": "110-面向对象(高级)-关键字final的使用及真题",
+            "duration": "31:56",
+            "completed": false
+          },
+          {
+            "title": "111-面向对象(高级)-抽象类与抽象方法的使用",
+            "duration": "39:10",
+            "completed": false
+          },
+          {
+            "title": "112-面向对象(高级)-模板方法设计模式及抽象课后练习",
+            "duration": "41:53",
+            "completed": false
+          },
+          {
+            "title": "113-面向对象(高级)-接口的使用",
+            "duration": "49:23",
+            "completed": false
+          },
+          {
+            "title": "114-面向对象(高级)-接口的课后练习1-3",
+            "duration": "44:50",
+            "completed": false
+          },
+          {
+            "title": "115-面向对象(高级)-JDK8和JDK9中接口的新特性",
+            "duration": "21:28",
+            "completed": false
+          },
+          {
+            "title": "116-面向对象(高级)-类的成员之五：内部类",
+            "duration": "01:05:43",
+            "completed": false
+          },
+          {
+            "title": "117-面向对象(高级)-枚举类的两种定义方式及练习",
+            "duration": "01:00:56",
+            "completed": false
+          },
+          {
+            "title": "118-面向对象(高级)-Annotation注解、单元测试的使用",
+            "duration": "01:00:15",
+            "completed": false
+          },
+          {
+            "title": "119-面向对象(高级)-包装类的理解_基本数据类型与包装类间的转换",
+            "duration": "42:41",
+            "completed": false
+          },
+          {
+            "title": "120-面向对象(高级)-String与基本数据类型、包装类间的转换及练习",
+            "duration": "45:33",
+            "completed": false
+          },
+          {
+            "title": "121-面向对象(高级)-IDEA中快捷键的使用和修改",
+            "duration": "36:13",
+            "completed": false
+          },
+          {
+            "title": "122-面向对象(高级)-IDEA中如何调试程序",
+            "duration": "30:43",
+            "completed": false
+          },
+          {
+            "title": "123-面向对象(高级)-第08章复习与企业真题",
+            "duration": "01:11:10",
+            "completed": false
+          },
+          {
+            "title": "124-异常处理-异常的概述与常见异常的举例",
+            "duration": "47:06",
+            "completed": false
+          },
+          {
+            "title": "125-异常处理-异常处理方式一：try-catch的使用",
+            "duration": "36:02",
+            "completed": false
+          },
+          {
+            "title": "126-异常处理-finally的使用",
+            "duration": "29:14",
+            "completed": false
+          },
+          {
+            "title": "127-异常处理-异常处理方式二：throws",
+            "duration": "27:57",
+            "completed": false
+          },
+          {
+            "title": "128-异常处理-使用throw手动抛出异常对象",
+            "duration": "25:56",
+            "completed": false
+          },
+          {
+            "title": "129-异常处理-如何自定义异常类及课后练习",
+            "duration": "39:31",
+            "completed": false
+          },
+          {
+            "title": "130-异常处理-项目三：优尚开发团队人员调度系统的介绍、开发与测试",
+            "duration": "02:00:18",
+            "completed": false
+          },
+          {
+            "title": "131-异常处理-第09章复习与企业真题",
+            "duration": "38:52",
+            "completed": false
+          },
+          {
+            "title": "132-多线程-程序、进程、线程与并行、并发的概念",
+            "duration": "36:31",
+            "completed": false
+          },
+          {
+            "title": "133-多线程-线程创建方式1：继承Thread类",
+            "duration": "24:10",
+            "completed": false
+          },
+          {
+            "title": "134-多线程-线程创建方式2：实现Runnable接口",
+            "duration": "36:59",
+            "completed": false
+          },
+          {
+            "title": "135-多线程-Thread类的常用方法和生命周期",
+            "duration": "46:04",
+            "completed": false
+          },
+          {
+            "title": "136-多线程-同步代码块解决两种线程创建方式的线程安全问题",
+            "duration": "45:44",
+            "completed": false
+          },
+          {
+            "title": "137-多线程-同步方法解决两种线程创建方式的线程安全问题",
+            "duration": "35:12",
+            "completed": false
+          },
+          {
+            "title": "138-多线程-线程安全的懒汉式_死锁_ReentrantLock的使用",
+            "duration": "59:46",
+            "completed": false
+          },
+          {
+            "title": "139-多线程-线程间的通信机制与生产者消费者案例",
+            "duration": "46:45",
+            "completed": false
+          },
+          {
+            "title": "140-多线程-线程的创建方式3、4：实现Callable与线程池",
+            "duration": "26:43",
+            "completed": false
+          },
+          {
+            "title": "141-多线程-第10章复习与企业真题",
+            "duration": "42:32",
+            "completed": false
+          },
+          {
+            "title": "142-常用类与基础API-String的理解与不可变性",
+            "duration": "36:49",
+            "completed": false
+          },
+          {
+            "title": "143-常用类与基础API-String的实例化与连接操作",
+            "duration": "37:09",
+            "completed": false
+          },
+          {
+            "title": "144-常用类与基础API-String的构造器与常用方法",
+            "duration": "59:49",
+            "completed": false
+          },
+          {
+            "title": "145-常用类与基础API-String的课后练习1-3",
+            "duration": "45:16",
+            "completed": false
+          },
+          {
+            "title": "146-常用类与基础API-StringBuffer与StringBuilder的源码分析、常用方法",
+            "duration": "53:32",
+            "completed": false
+          },
+          {
+            "title": "147-常用类与基础API-JDK8之前日期时间API的使用：Date、SimpleDateFormat、Calendar",
+            "duration": "48:03",
+            "completed": false
+          },
+          {
+            "title": "148-常用类与基础API-JDK8中新的日期时间API的使用和练习",
+            "duration": "43:04",
+            "completed": false
+          },
+          {
+            "title": "149-常用类与基础API-使用Comparable接口实现自然排序",
+            "duration": "26:37",
+            "completed": false
+          },
+          {
+            "title": "150-常用类与基础API-使用Comparator接口实现定制排序及对比",
+            "duration": "27:25",
+            "completed": false
+          },
+          {
+            "title": "151-常用类与基础API-其它常用类的使用：BigInteger、BigDecimal、Random等",
+            "duration": "37:29",
+            "completed": false
+          },
+          {
+            "title": "152-常用类与基础API-第11章复习与企业真题",
+            "duration": "35:52",
+            "completed": false
+          },
+          {
+            "title": "153-集合框架-数组的特点、弊端与集合框架体系介绍",
+            "duration": "35:04",
+            "completed": false
+          },
+          {
+            "title": "154-集合框架-Collection接口中的方法测试",
+            "duration": "01:15:26",
+            "completed": false
+          },
+          {
+            "title": "155-集合框架-List接口常用方法的测试",
+            "duration": "21:09",
+            "completed": false
+          },
+          {
+            "title": "156-集合框架-List不同实现类的对比及课后练习",
+            "duration": "42:50",
+            "completed": false
+          },
+          {
+            "title": "157-集合框架-Set不同实现类的对比及Set无序性、不可重复性的剖析",
+            "duration": "39:58",
+            "completed": false
+          },
+          {
+            "title": "158-集合框架-TreeSet的使用与Set接口课后练习",
+            "duration": "48:43",
+            "completed": false
+          },
+          {
+            "title": "159-集合框架-Map不同实现类的对比与HashMap中元素的特点",
+            "duration": "32:14",
+            "completed": false
+          },
+          {
+            "title": "160-集合框架-Map接口常用方法的测试",
+            "duration": "26:30",
+            "completed": false
+          },
+          {
+            "title": "161-集合框架-TreeMap、Properties的使用及Map练习",
+            "duration": "59:23",
+            "completed": false
+          },
+          {
+            "title": "162-集合框架-Collections工具类的使用",
+            "duration": "40:35",
+            "completed": false
+          },
+          {
+            "title": "163-集合框架-第12章复习与企业真题",
+            "duration": "36:47",
+            "completed": false
+          },
+          {
+            "title": "164-泛型-泛型的理解及其在集合、比较器中的使用",
+            "duration": "57:39",
+            "completed": false
+          },
+          {
+            "title": "165-泛型-自定义泛型类、泛型方法",
+            "duration": "53:03",
+            "completed": false
+          },
+          {
+            "title": "166-泛型-泛型的应用举例及练习1-3",
+            "duration": "43:36",
+            "completed": false
+          },
+          {
+            "title": "167-泛型-泛型在继承上的体现及通配符的使用_第13章复习与企业真题",
+            "duration": "57:08",
+            "completed": false
+          },
+          {
+            "title": "168-数据结构与集合源码-数据结构概述与手写线性表、二叉树",
+            "duration": "01:07:29",
+            "completed": false
+          },
+          {
+            "title": "169-数据结构与集合源码-ArrayList在JDK7和JDK8中的源码剖析",
+            "duration": "24:48",
+            "completed": false
+          },
+          {
+            "title": "170-数据结构与集合源码-Vector、LinkedList在JDK8中的源码剖析",
+            "duration": "23:51",
+            "completed": false
+          },
+          {
+            "title": "171-数据结构与集合源码-HashMap在JDK7中的源码剖析",
+            "duration": "59:09",
+            "completed": false
+          },
+          {
+            "title": "172-数据结构与集合源码-HashMap在JDK8中的源码剖析",
+            "duration": "34:58",
+            "completed": false
+          },
+          {
+            "title": "173-数据结构与集合源码-LinkedHashMap、HashSet、LinkedHashSet的源码剖析",
+            "duration": "22:16",
+            "completed": false
+          },
+          {
+            "title": "174-数据结构与集合源码-第14章复习与企业真题",
+            "duration": "51:05",
+            "completed": false
+          },
+          {
+            "title": "175-File类与IO流-File类的实例化与常用方法_File练习1-3",
+            "duration": "01:13:11",
+            "completed": false
+          },
+          {
+            "title": "176-File类与IO流-IO流概述与流的分类",
+            "duration": "19:51",
+            "completed": false
+          },
+          {
+            "title": "177-File类与IO流-使用FileReader和FileWriter读取、写出文本数据",
+            "duration": "47:27",
+            "completed": false
+          },
+          {
+            "title": "178-File类与IO流-FileInputStream和FileOutputStream的使用",
+            "duration": "35:35",
+            "completed": false
+          },
+          {
+            "title": "179-File类与IO流-处理流之1：缓冲流的使用",
+            "duration": "44:52",
+            "completed": false
+          },
+          {
+            "title": "180-File类与IO流-处理流之2：转换流的使用及各种字符集的讲解",
+            "duration": "54:33",
+            "completed": false
+          },
+          {
+            "title": "181-File类与IO流-处理流之3：对象流的使用及对象的序列化机制",
+            "duration": "51:52",
+            "completed": false
+          },
+          {
+            "title": "182-File类与IO流-其它流的使用_第15章复习与企业真题",
+            "duration": "52:06",
+            "completed": false
+          },
+          {
+            "title": "183-网络编程-网络编程三要素与InetAddress类的使用",
+            "duration": "59:06",
+            "completed": false
+          },
+          {
+            "title": "184-网络编程-TCP与UDP协议剖析与TCP编程案例1-3",
+            "duration": "01:07:24",
+            "completed": false
+          },
+          {
+            "title": "185-网络编程-聊天室代码实现的说明与演示",
+            "duration": "22:35",
+            "completed": false
+          },
+          {
+            "title": "186-网络编程-UDP、URL网络编程及第16章复习与企业真题",
+            "duration": "58:41",
+            "completed": false
+          },
+          {
+            "title": "187-反射机制-反射的理解与使用举例",
+            "duration": "41:05",
+            "completed": false
+          },
+          {
+            "title": "188-反射机制-反射、Class的理解与获取Class实例的方式",
+            "duration": "30:26",
+            "completed": false
+          },
+          {
+            "title": "189-反射机制-类的加载过程与类加载器的理解",
+            "duration": "53:51",
+            "completed": false
+          },
+          {
+            "title": "190-反射机制-反射的应用：创建运行时类的对象、获取运行时类的完整结构",
+            "duration": "50:35",
+            "completed": false
+          },
+          {
+            "title": "191-反射机制-反射的应用：调用指定的属性、方法、构造器",
+            "duration": "36:05",
+            "completed": false
+          },
+          {
+            "title": "192-反射机制-反射的应用：获取指定的注解_反射的动态性举例",
+            "duration": "39:06",
+            "completed": false
+          },
+          {
+            "title": "193-反射机制-第17章复习与企业真题",
+            "duration": "36:56",
+            "completed": false
+          },
+          {
+            "title": "194-JDK8-17新特性-新特性的概述_如何学习新特性",
+            "duration": "25:27",
+            "completed": false
+          },
+          {
+            "title": "195-JDK8-17新特性-lambda表达式的使用与函数式接口的理解",
+            "duration": "46:27",
+            "completed": false
+          },
+          {
+            "title": "196-JDK8-17新特性-方法引用与构造器引用",
+            "duration": "55:20",
+            "completed": false
+          },
+          {
+            "title": "197-JDK8-17新特性-StreamAPI使用三环节：实例化、中间操作、终止操作",
+            "duration": "01:20:20",
+            "completed": false
+          },
+          {
+            "title": "198-JDK8-17新特性-JDK8之后的语法新特性汇总1",
+            "duration": "32:10",
+            "completed": false
+          },
+          {
+            "title": "199-JDK8-17新特性-JDK8之后的语法新特性汇总2及API层面变化",
+            "duration": "01:08:01",
+            "completed": false
+          },
+          {
+            "title": "200-JDK8-17新特性-第18章复习与企业真题_最后寄语",
+            "duration": "24:42",
+            "completed": false
+          }
+        ],
+        "addedDate": "2025-06-20T07:06:03.875Z"
+      }
+    ],
+    "knowledge": [],
+    "focusLogs": [
+      {
+        "taskName": "未选择任务",
+        "duration": 1,
+        "timestamp": "2025-06-20T07:27:57.612Z",
+        "sessionType": "work"
+      },
+      {
+        "taskName": "未选择任务",
+        "duration": 1,
+        "timestamp": "2025-06-20T07:28:05.873Z",
+        "sessionType": "work"
+      },
+      {
+        "taskName": "JAVA基础教程",
+        "duration": 1,
+        "timestamp": "2025-06-20T07:29:22.060Z",
+        "sessionType": "work"
+      },
+      {
+        "taskName": "JAVA基础教程",
+        "duration": 1,
+        "timestamp": "2025-06-20T07:29:37.349Z",
+        "sessionType": "work"
+      },
+      {
+        "duration": 1,
+        "timestamp": "2025-06-20T09:09:29.556Z",
+        "round": 1,
+        "sessionType": "work"
+      },
+      {
+        "duration": 1,
+        "timestamp": "2025-06-20T09:10:55.973Z",
+        "round": 2,
+        "sessionType": "work"
+      },
+      {
+        "duration": 1,
+        "timestamp": "2025-06-20T09:12:07.035Z",
+        "round": 3,
+        "sessionType": "work"
+      },
+      {
+        "duration": 1,
+        "timestamp": "2025-06-20T09:13:24.876Z",
+        "round": 1,
+        "sessionType": "work"
+      },
+      {
+        "duration": 1,
+        "timestamp": "2025-06-20T09:15:44.260Z",
+        "round": 3,
+        "sessionType": "work"
+      },
+      {
+        "duration": 1,
+        "timestamp": "2025-06-20T09:23:32.868Z",
+        "round": 5,
+        "sessionType": "work"
+      },
+      {
+        "duration": 0.08333333333333333,
+        "timestamp": "2025-06-20T09:24:13.924Z",
+        "round": 1,
+        "sessionType": "work"
+      },
+      {
+        "duration": 0.08333333333333333,
+        "timestamp": "2025-06-20T09:24:27.396Z",
+        "round": 2,
+        "sessionType": "work"
+      },
+      {
+        "duration": 0.08333333333333333,
+        "timestamp": "2025-06-20T09:25:54.116Z",
+        "round": 1,
+        "sessionType": "work"
+      },
+      {
+        "duration": 0.08333333333333333,
+        "timestamp": "2025-06-20T09:26:14.812Z",
+        "round": 3,
+        "sessionType": "work"
+      },
+      {
+        "duration": 0.08333333333333333,
+        "timestamp": "2025-06-20T09:28:59.076Z",
+        "round": 1,
+        "sessionType": "work"
+      },
+      {
+        "duration": 0.08333333333333333,
+        "timestamp": "2025-06-20T09:29:21.788Z",
+        "round": 3,
+        "sessionType": "work"
+      },
+      {
+        "duration": 0.08333333333333333,
+        "timestamp": "2025-06-20T09:29:33.596Z",
+        "round": 1,
+        "sessionType": "work"
+      },
+      {
+        "duration": 0.08333333333333333,
+        "timestamp": "2025-06-20T09:29:54.237Z",
+        "round": 3,
+        "sessionType": "work"
+      },
+      {
+        "duration": 0.08333333333333333,
+        "timestamp": "2025-06-20T09:30:15.884Z",
+        "round": 1,
+        "sessionType": "work"
+      },
+      {
+        "duration": 0.08333333333333333,
+        "timestamp": "2025-06-20T09:31:13.636Z",
+        "round": 1,
+        "sessionType": "work"
+      },
+      {
+        "duration": 0.08333333333333333,
+        "timestamp": "2025-06-20T09:33:46.412Z",
+        "round": 1,
+        "sessionType": "work"
+      },
+      {
+        "duration": 0.08333333333333333,
+        "timestamp": "2025-06-20T09:34:02.820Z",
+        "round": 2,
+        "sessionType": "work"
+      },
+      {
+        "duration": 0.08333333333333333,
+        "timestamp": "2025-06-20T09:34:09.684Z",
+        "round": 3,
+        "sessionType": "work"
+      },
+      {
+        "duration": 0.08333333333333333,
+        "timestamp": "2025-06-20T09:38:37.524Z",
+        "round": 1,
+        "sessionType": "work"
+      },
+      {
+        "duration": 0.08333333333333333,
+        "timestamp": "2025-06-20T09:39:10.996Z",
+        "round": 1,
+        "sessionType": "work"
+      }
+    ]
+  }
+]

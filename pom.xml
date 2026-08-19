@@ -90,6 +90,14 @@
             <version>5.8.37</version>
         </dependency>
 
+        <!-- JSON Schema 生成器：根据 Java 类生成 JSON Schema 定义，-->
+        <dependency>
+            <groupId>com.github.victools</groupId>
+            <artifactId>jsonschema-generator</artifactId>
+            <version>4.38.0</version>
+        </dependency>
+
+
         <!-- ========== 3. AI 大模型 SDK ========== -->
         <!-- 阿里云百炼（DashScope）Java SDK：用于调用通义千问等大模型能力。
              坐标来自 https://mvnrepository.com/artifact/com.alibaba/dashscope-sdk-java -->

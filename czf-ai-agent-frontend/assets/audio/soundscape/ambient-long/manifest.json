@@ -1,0 +1,231 @@
+{
+  "version": 1,
+  "policy": "exact PCM repetition; no fades, crossfades, normalization, or gain changes; AAC is a legacy-browser compatibility copy",
+  "tracks": {
+    "cafe-room": {
+      "sourceFrames": 5921792,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 3,
+      "sourceDuration": 123.37066666666666,
+      "repetitions": 2,
+      "outputFrames": 11843584,
+      "outputDuration": 246.74133333333333,
+      "compatibility": {
+        "format": "m4a/aac",
+        "bitrate": "256k",
+        "source": "cafe-room.m4a"
+      }
+    },
+    "eaves-rain": {
+      "sourceFrames": 259072,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 3,
+      "sourceDuration": 5.397333333333333,
+      "repetitions": 34,
+      "outputFrames": 8808448,
+      "outputDuration": 183.50933333333333,
+      "compatibility": {
+        "format": "m4a/aac",
+        "bitrate": "256k",
+        "source": "eaves-rain.m4a"
+      }
+    },
+    "fan-breeze": {
+      "sourceFrames": 1440768,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 3,
+      "sourceDuration": 30.016,
+      "repetitions": 6,
+      "outputFrames": 8644608,
+      "outputDuration": 180.096,
+      "compatibility": {
+        "format": "m4a/aac",
+        "bitrate": "256k",
+        "source": "fan-breeze.m4a"
+      }
+    },
+    "fireplace": {
+      "sourceFrames": 480256,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 3,
+      "sourceDuration": 10.005333333333333,
+      "repetitions": 18,
+      "outputFrames": 8644608,
+      "outputDuration": 180.096,
+      "compatibility": {
+        "format": "m4a/aac",
+        "bitrate": "256k",
+        "source": "fireplace.m4a"
+      }
+    },
+    "forest-birds": {
+      "sourceFrames": 5011456,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 3,
+      "sourceDuration": 104.40533333333333,
+      "repetitions": 2,
+      "outputFrames": 10022912,
+      "outputDuration": 208.81066666666666,
+      "compatibility": {
+        "format": "m4a/aac",
+        "bitrate": "256k",
+        "source": "forest-birds.m4a"
+      }
+    },
+    "forest-stream": {
+      "sourceFrames": 1440768,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 3,
+      "sourceDuration": 30.016,
+      "repetitions": 6,
+      "outputFrames": 8644608,
+      "outputDuration": 180.096,
+      "compatibility": {
+        "format": "m4a/aac",
+        "bitrate": "256k",
+        "source": "forest-stream.m4a"
+      }
+    },
+    "garden-fountain": {
+      "sourceFrames": 1562624,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 3,
+      "sourceDuration": 32.55466666666667,
+      "repetitions": 6,
+      "outputFrames": 9375744,
+      "outputDuration": 195.32800000000003,
+      "compatibility": {
+        "format": "m4a/aac",
+        "bitrate": "256k",
+        "source": "garden-fountain.m4a"
+      }
+    },
+    "meadow-crickets": {
+      "sourceFrames": 1644544,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 3,
+      "sourceDuration": 34.26133333333333,
+      "repetitions": 6,
+      "outputFrames": 9867264,
+      "outputDuration": 205.56799999999998,
+      "compatibility": {
+        "format": "m4a/aac",
+        "bitrate": "256k",
+        "source": "meadow-crickets.m4a"
+      }
+    },
+    "meadow-wind": {
+      "sourceFrames": 1680384,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 3,
+      "sourceDuration": 35.008,
+      "repetitions": 6,
+      "outputFrames": 10082304,
+      "outputDuration": 210.048,
+      "compatibility": {
+        "format": "m4a/aac",
+        "bitrate": "256k",
+        "source": "meadow-wind.m4a"
+      }
+    },
+    "mountain-waterfall": {
+      "sourceFrames": 1440768,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 3,
+      "sourceDuration": 30.016,
+      "repetitions": 6,
+      "outputFrames": 8644608,
+      "outputDuration": 180.096,
+      "compatibility": {
+        "format": "m4a/aac",
+        "bitrate": "256k",
+        "source": "mountain-waterfall.m4a"
+      }
+    },
+    "night-owl": {
+      "sourceFrames": 2736128,
+      "sampleRate": 48000,
+      "channels": 2,
+      "sampleWidth": 3,
+      "sourceDuration": 57.00266666666667,
+      "repetitions": 4,
+      "outputFrames": 10944512,
+      "outputDuration": 228.01066666666668,
+      "compatibility": {
+        "format": "m4a/aac",
+        "bitrate": "256k",
+        "source": "night-owl.m4a"
+      }
+    },
+    "ocean-tide": {
+      "sourceFrames": 3693568,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 3,
+      "sourceDuration": 76.94933333333333,
+      "repetitions": 3,
+      "outputFrames": 11080704,
+      "outputDuration": 230.84799999999998,
+      "compatibility": {
+        "format": "m4a/aac",
+        "bitrate": "256k",
+        "source": "ocean-tide.m4a"
+      }
+    },
+    "river-flow": {
+      "sourceFrames": 1732608,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 3,
+      "sourceDuration": 36.096,
+      "repetitions": 5,
+      "outputFrames": 8663040,
+      "outputDuration": 180.48,
+      "compatibility": {
+        "format": "m4a/aac",
+        "bitrate": "256k",
+        "source": "river-flow.m4a"
+      }
+    },
+    "spring-rain": {
+      "sourceFrames": 363520,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 3,
+      "sourceDuration": 7.573333333333333,
+      "repetitions": 24,
+      "outputFrames": 8724480,
+      "outputDuration": 181.76,
+      "compatibility": {
+        "format": "m4a/aac",
+        "bitrate": "256k",
+        "source": "spring-rain.m4a"
+      }
+    },
+    "summer-frogs": {
+      "sourceFrames": 1440768,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 3,
+      "sourceDuration": 30.016,
+      "repetitions": 6,
+      "outputFrames": 8644608,
+      "outputDuration": 180.096,
+      "compatibility": {
+        "format": "m4a/aac",
+        "bitrate": "256k",
+        "source": "summer-frogs.m4a"
+      }
+    }
+  }
+}

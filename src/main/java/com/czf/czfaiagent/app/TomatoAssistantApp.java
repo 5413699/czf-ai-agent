@@ -16,6 +16,7 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 @Component
 @Slf4j
@@ -69,6 +70,27 @@ public class TomatoAssistantApp {
         //  log.info("content: {}", content);这里通过advior打印日志，不再重复进行
         return content;
     }
+
+    // 番茄任务计划（总）
+    public record TomatoTaskPlan(
+            String goal,
+            List<String> assumptions,
+            List<TomatoTask> tasks,
+            String completionSign,
+            String firstAction
+    ) {
+    }
+    // 单个番茄任务
+    public record TomatoTask(
+            String title,
+            String action,
+            String output,
+            String completionCriteria,
+            int estimatedMinutes,
+            int pomodoroCount
+    ) {
+    }
+
 
 
 

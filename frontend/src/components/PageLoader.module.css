@@ -1,0 +1,18 @@
+.loader {
+  min-height: 55vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 12px;
+  color: var(--muted);
+}
+.loader svg {
+  color: var(--accent);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  50% {
+    transform: scale(1.12);
+    opacity: 0.65;
+  }
+}

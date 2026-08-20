@@ -1,0 +1,757 @@
+.secondaryButton,
+.iconButton,
+.rowActions button,
+.rowActions a,
+.expandButton {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: none;
+}
+.secondaryButton:hover,
+.iconButton:hover,
+.rowActions button:hover,
+.rowActions a:hover,
+.expandButton:hover {
+  background: var(--surface-soft);
+}
+.projectFilterBar,
+.panelToolbar,
+.resourceHeading,
+.workbenchHeader,
+.subtaskHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.projectFilterBar {
+  min-height: 58px;
+  margin-bottom: 18px;
+  padding: 8px 10px 8px 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+.projectFilterBar > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.projectFilterBar > div:first-child svg {
+  color: var(--accent);
+}
+.projectFilterBar span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.segmented {
+  margin: 0;
+  display: inline-flex;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-soft);
+}
+.segmented button {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  box-shadow: none;
+  font-size: 12px;
+}
+.segmented button:hover,
+.segmented .segmentActive {
+  background: var(--surface);
+  color: var(--text);
+}
+.workspaceLayout {
+  display: grid;
+  grid-template-columns: minmax(220px, 290px) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+.projectRail {
+  position: sticky;
+  top: 92px;
+  display: grid;
+  gap: 6px;
+}
+.projectItem,
+.projectSelected {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 11px;
+  min-height: 66px;
+  padding: 9px 11px;
+  border-color: transparent;
+  background: transparent;
+  color: var(--text);
+  box-shadow: none;
+  text-align: left;
+}
+.projectItem:hover {
+  border-color: var(--line);
+  background: var(--surface);
+}
+.projectSelected {
+  border-color: color-mix(in srgb, var(--accent) 24%, var(--line));
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.projectAvatar {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 800;
+}
+.projectCopy {
+  min-width: 0;
+}
+.projectCopy strong,
+.projectCopy small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.projectCopy small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
+}
+.workbench {
+  min-width: 0;
+  padding-left: 24px;
+  border-left: 1px solid var(--line);
+}
+.workbenchHeader {
+  align-items: flex-start;
+  padding: 5px 0 22px;
+}
+.workbenchTitle {
+  min-width: 0;
+}
+.workbenchTitle > span,
+.resourceHeading span,
+.modalHeader span {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+}
+.workbenchTitle h2 {
+  margin: 4px 0 6px;
+  font-size: 26px;
+}
+.workbenchTitle p {
+  max-width: 680px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.workbenchTitle small {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  margin-top: 12px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.toolbarActions,
+.rowActions,
+.panelToolbar > div,
+.formActions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.iconButton,
+.dangerIcon,
+.rowActions button,
+.rowActions a,
+.expandButton {
+  width: 38px;
+  min-height: 38px;
+  padding: 0;
+}
+.dangerIcon,
+.dangerButton,
+.dangerSmall {
+  border-color: color-mix(in srgb, var(--accent) 22%, var(--line)) !important;
+  background: var(--surface) !important;
+  color: var(--accent) !important;
+  box-shadow: none;
+}
+.dangerIcon:hover,
+.dangerButton:hover,
+.dangerSmall:hover {
+  background: var(--accent-soft) !important;
+}
+.tabBar {
+  display: flex;
+  gap: 22px;
+  border-bottom: 1px solid var(--line);
+}
+.tabBar button {
+  position: relative;
+  min-height: 44px;
+  padding: 0 2px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted);
+  box-shadow: none;
+}
+.tabBar button:hover,
+.tabBar .tabActive {
+  background: transparent;
+  color: var(--text);
+}
+.tabBar .tabActive:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+}
+.panel {
+  padding-top: 18px;
+}
+.panelToolbar {
+  margin-bottom: 10px;
+}
+.panelToolbar > span {
+  margin-right: auto;
+  color: var(--muted);
+  font-size: 11px;
+}
+.taskList,
+.subtaskList,
+.resourceList {
+  display: grid;
+}
+.taskRow {
+  border-bottom: 1px solid var(--line);
+  content-visibility: auto;
+}
+.taskRow > header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(100px, 140px) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 82px;
+}
+.taskRow.archived {
+  opacity: 0.68;
+}
+.expandButton {
+  border-color: transparent;
+}
+.taskTitle {
+  min-width: 0;
+}
+.taskTitle h3,
+.resourceHeading h3 {
+  margin: 0;
+  font-size: 15px;
+}
+.taskTitle p {
+  margin: 4px 0 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.taskProgress {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 4px;
+}
+.taskProgress strong {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+}
+.taskProgress small {
+  color: var(--muted);
+  font-size: 9px;
+}
+.taskProgress > span {
+  grid-column: 1/-1;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--surface-strong);
+}
+.taskProgress i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+}
+.rowActions button,
+.rowActions a {
+  display: grid;
+  place-items: center;
+  min-height: 32px;
+  width: 32px;
+  border-radius: 7px;
+  text-decoration: none;
+}
+.taskMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 0 13px 50px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.taskMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.taskMeta .completeBadge {
+  color: var(--success);
+}
+.subtaskArea {
+  margin: 0 0 14px 50px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-soft);
+}
+.subtaskHeading strong,
+.subtaskHeading small {
+  display: block;
+}
+.subtaskHeading small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.subtaskHeading .secondaryButton {
+  min-height: 32px;
+  font-size: 11px;
+}
+.subtaskList {
+  margin-top: 10px;
+}
+.subtaskRow {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 58px;
+  border-top: 1px solid var(--line);
+}
+.checkbox {
+  width: 22px;
+  height: 22px;
+  min-height: 22px;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: #fff;
+  box-shadow: none;
+}
+.checkbox[aria-pressed='true'] {
+  border-color: var(--success);
+  background: var(--success);
+}
+.subtaskRow strong {
+  font-size: 12px;
+}
+.subtaskRow p {
+  margin: 3px 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+.subtaskRow small {
+  color: var(--muted);
+  font-size: 9px;
+}
+.subtaskDone > div:nth-child(2) strong {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+.subtaskEmpty {
+  margin-top: 12px;
+  padding: 18px;
+  border: 1px dashed var(--line);
+  color: var(--muted);
+  text-align: center;
+  font-size: 11px;
+}
+.resourceHeading {
+  align-items: flex-end;
+  padding-bottom: 18px;
+}
+.resourceHeading h3 {
+  margin-top: 4px;
+  font-size: 19px;
+}
+.resourceHeading p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.resourceRow {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 13px;
+  align-items: center;
+  min-height: 70px;
+  border-top: 1px solid var(--line);
+}
+.resourceRow > span {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--surface-soft);
+  color: var(--second);
+}
+.resourceRow a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 750;
+  text-decoration: none;
+}
+.resourceRow a:hover {
+  color: var(--accent);
+}
+.resourceRow p {
+  margin: 4px 0 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.emptyHero {
+  min-height: 430px;
+  display: grid;
+  grid-template-columns: minmax(180px, 280px) minmax(0, 480px);
+  place-content: center;
+  align-items: center;
+  gap: 52px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.emptyHero img {
+  width: 100%;
+  max-height: 260px;
+}
+.emptyHero span {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+}
+.emptyHero h2 {
+  margin: 8px 0;
+  font-size: 28px;
+}
+.emptyHero p {
+  margin: 0 0 20px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.emptyInline {
+  min-height: 260px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  color: var(--muted);
+  text-align: center;
+}
+.emptyInline h2,
+.emptyInline h3 {
+  margin: 12px 0 4px;
+  color: var(--text);
+}
+.emptyInline p {
+  margin: 0 0 14px;
+  font-size: 12px;
+}
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: color-mix(in srgb, #10141c 48%, transparent);
+  backdrop-filter: blur(5px);
+}
+.modal {
+  position: relative;
+  inset: auto;
+  width: min(620px, 100%);
+  margin: 0;
+  max-height: min(820px, calc(100vh - 40px));
+  overflow: auto;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-lg);
+}
+.modalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.modalHeader h2 {
+  margin: 4px 0 0;
+  font-size: 22px;
+}
+.form {
+  display: grid;
+  gap: 15px;
+}
+.form > label,
+.durationField {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 700;
+}
+.form input,
+.form textarea,
+.form select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  outline: 0;
+  background: var(--surface-soft);
+  color: var(--text);
+}
+.form input,
+.form select {
+  height: 43px;
+  padding: 0 12px;
+}
+.form textarea {
+  resize: vertical;
+  min-height: 78px;
+  padding: 11px 12px;
+  line-height: 1.55;
+}
+.form label > small,
+.durationField small {
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 1.5;
+}
+.durationInputs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.durationInputs label {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface-soft);
+}
+.durationInputs input {
+  border: 0;
+  background: transparent;
+}
+.durationInputs span {
+  padding-right: 12px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.importHelp {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 11px;
+  padding: 13px;
+  border: 1px solid color-mix(in srgb, var(--second) 25%, var(--line));
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--second) 7%, var(--surface));
+  color: var(--second);
+}
+.importHelp p {
+  margin: 4px 0 8px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.55;
+}
+.importHelp a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 750;
+}
+.formError {
+  margin: 0;
+  padding: 9px 11px;
+  border-radius: 7px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 12px;
+}
+.formActions {
+  justify-content: flex-end;
+  padding-top: 5px;
+}
+.confirmBody {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 4px 0 24px;
+}
+.confirmBody > span {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.confirmBody p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+@media (max-width: 980px) {
+  .workspaceLayout {
+    grid-template-columns: 1fr;
+  }
+  .projectRail {
+    position: static;
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    scroll-snap-type: x proximity;
+  }
+  .projectItem,
+  .projectSelected {
+    min-width: 230px;
+    scroll-snap-align: start;
+  }
+  .workbench {
+    padding-top: 18px;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+}
+@media (max-width: 720px) {
+  .projectFilterBar,
+  .panelToolbar,
+  .resourceHeading,
+  .workbenchHeader {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .projectFilterBar {
+    padding: 12px;
+  }
+  .segmented {
+    width: 100%;
+  }
+  .segmented button {
+    flex: 1;
+    min-width: 0;
+  }
+  .toolbarActions {
+    align-self: flex-start;
+  }
+  .panelToolbar > span {
+    margin: 0;
+  }
+  .panelToolbar > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .taskRow > header {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    padding: 10px 0;
+  }
+  .taskProgress {
+    grid-column: 2;
+  }
+  .taskRow > header > .rowActions {
+    grid-column: 2/-1;
+    justify-content: flex-end;
+  }
+  .taskMeta {
+    padding-left: 0;
+  }
+  .subtaskArea {
+    margin-left: 0;
+    padding: 12px;
+  }
+  .emptyHero {
+    min-height: 520px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    text-align: center;
+  }
+  .emptyHero img {
+    width: min(220px, 70vw);
+    margin: 0 auto;
+  }
+}
+@media (max-width: 520px) {
+  .modalBackdrop {
+    align-items: end;
+    padding: 0;
+  }
+  .modal {
+    width: 100%;
+    max-height: 90vh;
+    padding: 18px 16px max(18px, env(safe-area-inset-bottom));
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 8px 8px 0 0;
+  }
+  .subtaskHeading {
+    align-items: flex-start;
+  }
+  .subtaskRow,
+  .resourceRow {
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: 9px 0;
+  }
+  .subtaskRow > .rowActions,
+  .resourceRow > .rowActions {
+    grid-column: 2;
+    justify-content: flex-end;
+  }
+}

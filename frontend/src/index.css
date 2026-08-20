@@ -1,0 +1,138 @@
+:root {
+  font-family: 'Microsoft YaHei UI', 'PingFang SC', 'Noto Sans CJK SC', system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --canvas: #f8fafc;
+  --surface: #ffffff;
+  --surface-soft: #f1f5f9;
+  --surface-strong: #e7edf3;
+  --text: #172033;
+  --muted: #657084;
+  --line: #dfe5eb;
+  --accent: #ef4e4e;
+  --accent-strong: #d9343e;
+  --accent-soft: #fff0ed;
+  --second: #256e71;
+  --success: #23855b;
+  --shadow: 0 12px 36px rgba(30, 42, 64, 0.08);
+  --shadow-lg: 0 18px 55px rgba(30, 42, 64, 0.14);
+}
+:root[data-theme='night'] {
+  --canvas: #0d1015;
+  --surface: #161a21;
+  --surface-soft: #1c212a;
+  --surface-strong: #282e39;
+  --text: #f6f4ef;
+  --muted: #9ba4b3;
+  --line: #2a303a;
+  --accent: #ff665e;
+  --accent-strong: #ff8178;
+  --accent-soft: #34201f;
+  --second: #6fc6bd;
+  --success: #69c491;
+  --shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 18px 55px rgba(0, 0, 0, 0.5);
+}
+:root[data-theme='eye'] {
+  --canvas: #edf3e9;
+  --surface: #f8fbf5;
+  --surface-soft: #e6efe1;
+  --surface-strong: #dbe8d5;
+  --text: #183426;
+  --muted: #607565;
+  --line: #cad8c4;
+  --accent: #328253;
+  --accent-strong: #24683f;
+  --accent-soft: #dcecdf;
+  --second: #577d3d;
+  --success: #328253;
+  --shadow: 0 12px 36px rgba(47, 81, 53, 0.09);
+  --shadow-lg: 0 18px 55px rgba(47, 81, 53, 0.16);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  min-width: 320px;
+  background: var(--canvas);
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  letter-spacing: 0;
+}
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+button:hover {
+  transform: translateY(-1px);
+  background: var(--accent-strong);
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  outline-offset: 2px;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+a {
+  color: inherit;
+}
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

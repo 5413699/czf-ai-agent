@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8fafc" />
+    <link rel="icon" href="/assets/images/tomato-primary.svg" type="image/svg+xml" />
+    <script>
+      try {
+        const stored = JSON.parse(localStorage.getItem('studyflow:preferences') || 'null')
+        const theme = stored && stored.state && stored.state.theme
+        if (theme === 'day' || theme === 'night' || theme === 'eye') {
+          document.documentElement.dataset.theme = theme
+          document.documentElement.style.colorScheme = theme === 'night' ? 'dark' : 'light'
+        }
+      } catch (_) {
+        // The app still starts with the default theme if browser storage is unavailable.
+      }
+    </script>
+    <meta name="description" content="番茄自习室 - 让每一枚番茄都有去处" />
+    <title>番茄自习室</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

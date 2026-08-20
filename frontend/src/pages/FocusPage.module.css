@@ -1,0 +1,683 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.8fr);
+  min-height: 650px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.timerStage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 650px;
+  padding: 50px 24px;
+  background: radial-gradient(circle at 50% 46%, var(--accent-soft), transparent 47%);
+}
+.timerColumn {
+  position: relative;
+  min-width: 0;
+  background: radial-gradient(circle at 50% 46%, var(--accent-soft), transparent 47%);
+}
+.timerColumn .timerStage {
+  background: transparent;
+}
+.clockStylePicker {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 5;
+  display: flex;
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+.clockStylePicker button {
+  min-height: 32px;
+  padding: 0 9px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  box-shadow: none;
+  font-size: 10px;
+}
+.clockStylePicker button:hover,
+.clockStylePicker .clockStyleActive {
+  background: var(--surface-strong);
+  color: var(--text);
+}
+.clockStylePicker svg {
+  width: 15px;
+}
+.phasePill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+.phasePill > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px var(--accent-soft);
+}
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+.primaryButton {
+  min-width: 164px;
+  height: 52px;
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--accent) 24%, transparent);
+}
+.secondaryButton,
+.ghostButton {
+  background: var(--surface-soft);
+  color: var(--text);
+  border-color: var(--line);
+  box-shadow: none;
+}
+.secondaryButton {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+}
+.secondaryButton:hover,
+.ghostButton:hover {
+  background: var(--surface-strong);
+}
+.sidePanel {
+  padding: 30px;
+  border-left: 1px solid var(--line);
+  max-height: 760px;
+  overflow: auto;
+}
+.sideHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 18px;
+}
+.sideHeading span {
+  color: var(--muted);
+  font-size: 11px;
+}
+.sideHeading h2 {
+  margin: 4px 0 0;
+  font-size: 23px;
+}
+.sideHeading > svg {
+  color: var(--accent);
+}
+.presets {
+  display: grid;
+  gap: 7px;
+}
+.preset,
+.selectedPreset {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+}
+.selectedPreset {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.preset > button:first-child,
+.selectedPreset > button:first-child {
+  justify-content: flex-start;
+  min-width: 0;
+  min-height: 60px;
+  padding: 9px 11px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  box-shadow: none;
+}
+.preset > button:first-child:hover {
+  background: var(--surface-soft);
+}
+.preset > button:first-child > span,
+.selectedPreset > button:first-child > span {
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  background: var(--surface-strong);
+  color: var(--accent);
+}
+.preset > button:first-child > span svg,
+.selectedPreset > button:first-child > span svg {
+  width: 18px;
+}
+.preset > button:first-child > div,
+.selectedPreset > button:first-child > div {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+.preset strong,
+.selectedPreset strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.preset small,
+.selectedPreset small {
+  color: var(--muted);
+  font-size: 10px;
+}
+.preset > button:first-child > svg,
+.selectedPreset > button:first-child > svg {
+  margin-left: auto;
+  color: var(--accent);
+}
+.itemActions {
+  display: flex;
+  padding-right: 6px;
+}
+.itemActions button {
+  width: 27px;
+  min-height: 30px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  box-shadow: none;
+}
+.itemActions button:hover {
+  color: var(--accent);
+  background: var(--surface-strong);
+}
+.itemActions svg {
+  width: 14px;
+}
+.listFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.listFooter button {
+  min-height: 34px;
+  padding: 0 8px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  box-shadow: none;
+  font-size: 11px;
+}
+.listFooter svg {
+  width: 14px;
+}
+.assignment {
+  display: grid;
+  gap: 8px;
+  margin-top: 22px;
+}
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.assignment select {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+.goalBox {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-soft);
+  overflow: hidden;
+}
+.goalBox textarea {
+  min-height: 42px;
+  padding: 11px;
+  border: 0;
+  resize: none;
+  background: transparent;
+  color: var(--text);
+  line-height: 1.55;
+}
+.goalBox:not(.goalExpanded) textarea {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.goalBox button {
+  width: 38px;
+  min-height: 42px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  box-shadow: none;
+}
+.goalBox svg {
+  width: 16px;
+}
+.soundscape {
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.soundscape > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  cursor: pointer;
+  list-style: none;
+}
+.soundscape > summary::-webkit-details-marker {
+  display: none;
+}
+.soundscape > summary span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.soundscape > summary svg {
+  width: 16px;
+  color: var(--accent);
+}
+.soundscape > summary small {
+  color: var(--muted);
+}
+.soundGroup {
+  margin: 14px 0;
+}
+.soundGroup > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+.soundGroup > header > div {
+  display: flex;
+}
+.soundGroup header button,
+.soundGroup header label {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.soundGroup header button {
+  min-height: 30px;
+  padding: 0;
+  box-shadow: none;
+}
+.soundGroup header svg {
+  width: 15px;
+}
+.soundGroup input[type='file'] {
+  display: none;
+}
+.soundGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+.soundRow {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+.soundRow > .soundItem,
+.soundRow > .soundSelected {
+  width: 100%;
+  padding-right: 5px;
+  border-radius: 8px 0 0 8px;
+}
+.soundRow > div {
+  display: grid;
+  align-content: center;
+  border: 1px solid var(--line);
+  border-left: 0;
+  border-radius: 0 8px 8px 0;
+}
+.soundRow > div button {
+  width: 25px;
+  min-height: 23px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  box-shadow: none;
+}
+.soundRow > div button:hover {
+  color: var(--accent);
+  background: var(--surface-strong);
+}
+.soundRow > div svg {
+  width: 12px;
+}
+.soundItem,
+.soundSelected {
+  justify-content: flex-start;
+  min-width: 0;
+  min-height: 55px;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  box-shadow: none;
+}
+.soundSelected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.soundItem:hover {
+  background: var(--surface-soft);
+}
+.soundItem > span,
+.soundSelected > span {
+  flex: 0 0 22px;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  font-weight: 800;
+}
+.soundItem > span svg,
+.soundSelected > span svg {
+  width: 16px;
+  height: 16px;
+}
+.soundItem > div,
+.soundSelected > div {
+  min-width: 0;
+}
+.soundItem strong,
+.soundSelected strong,
+.soundItem small,
+.soundSelected small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.soundItem strong,
+.soundSelected strong {
+  font-size: 11px;
+}
+.soundItem small,
+.soundSelected small {
+  max-width: 120px;
+  color: var(--muted);
+  font-size: 9px;
+}
+.volume {
+  display: grid;
+  grid-template-columns: 105px 1fr 36px;
+  align-items: center;
+  gap: 8px;
+  margin: 11px 0;
+}
+.volume > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.volume svg {
+  width: 14px;
+}
+.volume input {
+  accent-color: var(--accent);
+  min-width: 0;
+}
+.volume output {
+  color: var(--muted);
+  font-size: 10px;
+  text-align: right;
+}
+.sessionStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 18px;
+  padding-top: 18px;
+}
+.sessionStats div {
+  display: grid;
+  gap: 4px;
+  text-align: center;
+}
+.sessionStats strong {
+  font-family: 'Space Grotesk';
+  font-size: 21px;
+}
+.sessionStats strong small {
+  font-size: 9px;
+}
+.sessionStats span {
+  color: var(--muted);
+  font-size: 9px;
+}
+.dialogBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(10, 14, 20, 0.56);
+  backdrop-filter: blur(8px);
+}
+.presetEditor {
+  width: min(500px, 100%);
+  display: grid;
+  gap: 15px;
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+}
+.presetEditor header {
+  display: flex;
+  justify-content: space-between;
+}
+.presetEditor header span {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+}
+.presetEditor h2 {
+  margin: 3px 0;
+}
+.presetEditor header button {
+  width: 36px;
+  min-height: 36px;
+  padding: 0;
+  background: transparent;
+  color: var(--muted);
+  box-shadow: none;
+}
+.presetEditor label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.presetEditor input,
+.presetEditor textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-soft);
+  color: var(--text);
+}
+.timeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.immersive {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: var(--canvas);
+}
+.immersive.transparent {
+  background: transparent;
+}
+.immersive .timerStage {
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 48%, var(--accent-soft), transparent 38%);
+}
+.immersiveTools {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: calc(100vw - 28px);
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(15px);
+  transform: translateX(-50%);
+}
+.immersiveTools > div {
+  display: flex;
+}
+.immersiveTools button {
+  min-height: 32px;
+  padding: 0 9px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  box-shadow: none;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.immersiveTools button:hover,
+.immersiveTools .toolActive {
+  background: var(--surface-strong);
+  color: var(--text);
+}
+@media (max-width: 1040px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidePanel {
+    max-height: none;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .timerStage {
+    min-height: 570px;
+  }
+}
+@media (max-width: 680px) {
+  .immersiveTools {
+    top: 10px;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .immersiveTools > div {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  .immersiveTools button {
+    font-size: 9px;
+  }
+  .soundGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 520px) {
+  .layout {
+    margin-inline: -16px;
+    border-inline: 0;
+    border-radius: 0;
+  }
+  .timerStage {
+    min-height: 510px;
+    padding: 76px 14px 36px;
+  }
+  .clockStylePicker {
+    top: 14px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .clockStylePicker button {
+    width: 38px;
+    padding: 0;
+  }
+  .clockStylePicker button span {
+    display: none;
+  }
+  .sidePanel {
+    padding: 24px 16px;
+  }
+  .ghostButton {
+    width: 100%;
+  }
+  .itemActions button:nth-child(-n + 2) {
+    display: none;
+  }
+  .soundGrid {
+    grid-template-columns: 1fr;
+  }
+  .soundItem small,
+  .soundSelected small {
+    max-width: 230px;
+  }
+  .timeGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .volume {
+    grid-template-columns: 95px 1fr 32px;
+  }
+}

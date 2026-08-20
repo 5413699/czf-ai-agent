@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.header p {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-weight: 750;
+  font-size: 12px;
+}
+.header h1 {
+  margin: 0;
+  font-size: clamp(30px, 4.2vw, 52px);
+  line-height: 1.04;
+}
+.header span {
+  display: block;
+  max-width: 680px;
+  margin-top: 12px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+@media (max-width: 700px) {
+  .header {
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
+  .actions {
+    width: 100%;
+  }
+}

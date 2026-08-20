@@ -1,0 +1,284 @@
+.toolbox {
+  margin: 0 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+.toolbox > summary {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 13px;
+  cursor: pointer;
+  list-style: none;
+}
+.toolbox > summary::-webkit-details-marker {
+  display: none;
+}
+.toolbox > summary span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 750;
+}
+.toolbox > summary svg {
+  width: 16px;
+  color: var(--accent);
+}
+.toolbox > summary small,
+.resources header small,
+.capabilities header small {
+  color: var(--muted);
+  font-size: 9px;
+}
+.resources,
+.capabilities {
+  padding: 13px;
+  border-top: 1px solid var(--line);
+}
+.resources header,
+.capabilities header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.resources header > div:first-child,
+.capabilities header > div:first-child {
+  display: grid;
+  gap: 2px;
+}
+.resourceActions {
+  display: flex;
+  gap: 4px;
+}
+.resourceActions label,
+.resourceActions button,
+.capabilityActions label,
+.capabilityActions button {
+  min-height: 32px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  box-shadow: none;
+  cursor: pointer;
+}
+.resourceActions label {
+  width: 32px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+.resourceActions svg,
+.capabilities header svg {
+  width: 14px;
+}
+.resourceActions input[type='file'],
+.capabilityActions input[type='file'] {
+  display: none;
+}
+.linkComposer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px;
+  margin-top: 10px;
+}
+.linkComposer input,
+.customForm input,
+.customForm select {
+  min-width: 0;
+  min-height: 36px;
+  padding: 0 9px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface-soft);
+  color: var(--text);
+}
+.linkComposer button {
+  min-height: 36px;
+}
+.resourceList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 10px;
+}
+.resourceList > div {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) 26px;
+  align-items: center;
+  gap: 7px;
+  padding: 7px;
+  border-radius: 7px;
+  background: var(--surface-soft);
+}
+.resourceList > div > span {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.resourceList svg {
+  width: 14px;
+}
+.resourceList div div {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+.resourceList strong,
+.resourceList small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.resourceList strong {
+  font-size: 10px;
+}
+.resourceList small {
+  color: var(--muted);
+  font-size: 8px;
+}
+.resourceList button {
+  width: 26px;
+  min-height: 26px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  box-shadow: none;
+}
+.capabilityActions {
+  display: flex;
+  gap: 5px;
+}
+.capabilityActions label,
+.capabilityActions button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+}
+.capabilityActions label {
+  cursor: pointer;
+}
+.capabilityActions button {
+  font-size: 10px;
+}
+.capabilityList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 10px;
+}
+.capabilityItem {
+  position: relative;
+  min-width: 0;
+  min-height: 48px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--muted);
+}
+.capabilityItem:hover,
+.capabilityActive {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--text);
+}
+.capabilityItem > button:first-child {
+  min-width: 0;
+  min-height: 46px;
+  justify-content: flex-start;
+  padding: 7px 9px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
+  text-align: left;
+}
+.capabilityItem > button:first-child:hover {
+  transform: none;
+}
+.capabilityItem > button:first-child > svg {
+  flex: 0 0 16px;
+  width: 16px;
+  color: var(--accent);
+}
+.capabilityItem span {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+.capabilityItem strong,
+.capabilityItem small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.capabilityItem strong {
+  font-size: 10px;
+}
+.capabilityItem small {
+  color: var(--muted);
+  font-size: 8px;
+}
+.deleteCapability {
+  width: 32px;
+  min-height: 100%;
+  padding: 0;
+  border: 0;
+  border-left: 1px solid color-mix(in srgb, var(--accent) 18%, var(--line));
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted);
+  box-shadow: none;
+}
+.deleteCapability:hover {
+  background: color-mix(in srgb, #c53f3f 9%, transparent);
+  color: #c53f3f;
+  transform: none;
+}
+.deleteCapability svg {
+  width: 13px;
+}
+.customForm {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 0.8fr) minmax(0, 1.2fr) auto;
+  gap: 6px;
+  margin-top: 10px;
+}
+.customForm button {
+  min-height: 36px;
+  padding-inline: 10px;
+  font-size: 10px;
+}
+@media (max-width: 560px) {
+  .toolbox > summary small,
+  .resources header small,
+  .capabilities header small {
+    display: none;
+  }
+  .resourceList,
+  .capabilityList {
+    grid-template-columns: 1fr;
+  }
+  .customForm {
+    grid-template-columns: 1fr;
+  }
+  .capabilityActions span {
+    display: none;
+  }
+}

@@ -35,3 +35,23 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Frontend ###
+node_modules/
+dist/
+.vite/
+coverage/
+playwright-report/
+test-results/
+*.log
+
+### Local environment ###
+.env
+.env.*
+!.env.example
+
+### Generated QA artifacts ###
+output/
+.playwright-cli/
+.codex/
+frontend-legacy/

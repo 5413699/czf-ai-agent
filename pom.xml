@@ -103,6 +103,13 @@
             <version>4.38.0</version>
         </dependency>
 
+        <!-- Kryo：高性能 Java 序列化库，用于序列化/反序列化对象。 -->
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>kryo</artifactId>
+            <version>5.6.2</version>
+        </dependency>
+
 
         <!-- ========== 3. AI 大模型 SDK ========== -->
         <!-- 阿里云百炼（DashScope）Java SDK：用于调用通义千问等大模型能力。

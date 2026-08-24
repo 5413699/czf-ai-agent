@@ -1,6 +1,7 @@
 package com.czf.czfaiagent.app;
 
 import com.czf.czfaiagent.advisor.MyLoggerAdvisor;
+import com.czf.czfaiagent.chatmemory.FileBasedChatMemory;
 import com.czf.czfaiagent.common.ErrorCode;
 import com.czf.czfaiagent.exception.BusinessException;
 import com.czf.czfaiagent.model.vo.tomato.TomatoTask;
@@ -51,11 +52,14 @@ public class TomatoAssistantApp {
                 .getResource(taskPlanFormatLocation)
                 .getContentAsString(StandardCharsets.UTF_8);
 
-        // 初始化基于内存的对话记忆
-        MessageWindowChatMemory chatMemory = MessageWindowChatMemory.builder()
-                .chatMemoryRepository(new InMemoryChatMemoryRepository())
-                .maxMessages(20)
-                .build();
+        // 初始化基于文件的对话记忆
+        String fileDir = System.getProperty("user.dir") + "/tmp/chat-memory";
+        ChatMemory chatMemory = new FileBasedChatMemory(fileDir);
+//        // 初始化基于内存的对话记忆
+//        MessageWindowChatMemory chatMemory = MessageWindowChatMemory.builder()
+//                .chatMemoryRepository(new InMemoryChatMemoryRepository())
+//                .maxMessages(20)
+//                .build();
 
         this.chatClient = ChatClient.builder(openAiChatModel)
                 .defaultAdvisors(

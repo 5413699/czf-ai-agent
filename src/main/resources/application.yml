@@ -13,7 +13,8 @@ ai:
     sfc-professor:
       location: classpath:/prompts/sfc-professor.md
     tomato-assistant:
-      location: classpath:/prompts/tomato-assistant.md
+      system-location: classpath:/prompts/tomato-assistant/tomato-assistant.md
+      task-plan-format-location: classpath:/prompts/tomato-assistant/tomato-task-plan-format.md
 
 # 内嵌 Web 服务器（Tomcat）的相关配置
 server:

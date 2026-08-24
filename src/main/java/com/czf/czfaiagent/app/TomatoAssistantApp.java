@@ -1,7 +1,10 @@
 package com.czf.czfaiagent.app;
 
 import com.czf.czfaiagent.advisor.MyLoggerAdvisor;
-import jakarta.annotation.Resource;
+import com.czf.czfaiagent.common.ErrorCode;
+import com.czf.czfaiagent.exception.BusinessException;
+import com.czf.czfaiagent.model.vo.tomato.TomatoTask;
+import com.czf.czfaiagent.model.vo.tomato.TomatoTaskPlan;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
@@ -10,29 +13,43 @@ import org.springframework.ai.chat.memory.InMemoryChatMemoryRepository;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
-import org.springframework.ai.template.NoOpTemplateRenderer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
-
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.List;
-
+import com.czf.czfaiagent.common.PomodoroConstants;
 @Component
 @Slf4j
 public class TomatoAssistantApp {
 
+    // 调用模型
     private final ChatClient chatClient;
+    // 番茄助手角色与拆解规则
+    private final String systemPrompt;
+    // 结构化输出字段要求
+    private final String taskPlanFormatPrompt;
 
-    public TomatoAssistantApp(
+
+
+
+    public TomatoAssistantApp (
             // 构造器的参数，不要看成方法体
             ChatModel openAiChatModel,
             ResourceLoader resourceLoader,
-            @Value("${ai.prompts.tomato-assistant.location}")
-            String promptLocation
-    ) {
+            @Value("${ai.prompts.tomato-assistant.system-location}")
+            String systemPromptLocation,
+            @Value("${ai.prompts.tomato-assistant.task-plan-format-location}")
+            String taskPlanFormatLocation
+    ) throws IOException {
         // 按名称从 classpath 加载提示词文件（类比 MyBatis 加载 mapper.xml）
-        var promptResource = resourceLoader.getResource(promptLocation);
+        this.systemPrompt = resourceLoader
+                .getResource(systemPromptLocation)
+                .getContentAsString(StandardCharsets.UTF_8);
+
+        this.taskPlanFormatPrompt = resourceLoader
+                .getResource(taskPlanFormatLocation)
+                .getContentAsString(StandardCharsets.UTF_8);
 
         // 初始化基于内存的对话记忆
         MessageWindowChatMemory chatMemory = MessageWindowChatMemory.builder()
@@ -41,14 +58,6 @@ public class TomatoAssistantApp {
                 .build();
 
         this.chatClient = ChatClient.builder(openAiChatModel)
-                // 提示词包含 LaTeX 花括号，不进行模板变量解析，防止误解析
-                .defaultTemplateRenderer(
-                        new NoOpTemplateRenderer()
-                )
-                .defaultSystem(
-                        promptResource,
-                        StandardCharsets.UTF_8
-                )
                 .defaultAdvisors(
                         MessageChatMemoryAdvisor
                                 .builder(chatMemory)
@@ -58,38 +67,192 @@ public class TomatoAssistantApp {
                 .build();
     }
 
-
+    // 重载方法。用户未指定番茄时间时，使用默认时间
     public String doChat(String message, String chatId) {
-        ChatResponse response = chatClient
-                .prompt()// ① 创建一个 PromptSpec（提示词构建器）
-                .user(message)// ② 设置用户消息
-                .advisors(spec -> spec.param(ChatMemory.CONVERSATION_ID , chatId))// ③ 给 Advisor 传参（这里是会话记忆的 chatId）
-                .call()// ④ 真正发起一次同步（阻塞）调用，拿到响应对象
-                .chatResponse();// ⑤ 从响应对象里取出 ChatResponse,其实这里可以直接.content()
-        String content = response.getResult().getOutput().getText();
-        //  log.info("content: {}", content);这里通过advior打印日志，不再重复进行
-        return content;
+        return doChat(message, chatId, PomodoroConstants.DEFAULT_POMODORO_MINUTES);
     }
 
-    // 番茄任务计划（总）
-    public record TomatoTaskPlan(
+    // 用户指定番茄时间时，先用validatePomodoroMinutes校验番茄时间是否在5-120分钟之间
+    public String doChat(
+            String message,
+            String chatId,
+            int pomodoroMinutes
+    ) {
+
+        validatePomodoroMinutes(pomodoroMinutes);
+
+        ChatResponse response = chatClient
+                .prompt()// 开启一个提示词构建器
+                .system(spec -> spec
+                        .text(systemPrompt)//模板字符串
+                        .param("pomodoroMinutes", pomodoroMinutes)// 把变量 pomodoroMinutes 的值填入模板的 {pomodoroMinutes} 占位符。
+                )
+                .user(message)
+                .advisors(spec ->
+                        spec.param(ChatMemory.CONVERSATION_ID, chatId)
+                )
+                .call()
+                .chatResponse();
+
+        return response.getResult()
+                .getOutput()
+                .getText();
+    }
+
+    // 校验番茄时间是否在5-120分钟之间
+    private void validatePomodoroMinutes(int pomodoroMinutes) {
+        if (pomodoroMinutes < PomodoroConstants.MIN_POMODORO_MINUTES
+                || pomodoroMinutes > PomodoroConstants.MAX_POMODORO_MINUTES) {
+            throw new BusinessException(
+                    ErrorCode.PARAMS_ERROR,
+                    "番茄时长必须在 %d 到 %d 分钟之间"
+                            .formatted(
+                                    PomodoroConstants.MIN_POMODORO_MINUTES,
+                                    PomodoroConstants.MAX_POMODORO_MINUTES
+                            )
+            );
+        }
+    }
+
+    public TomatoTaskPlan doChatWithTaskPlan(
             String goal,
-            List<String> assumptions,
-            List<TomatoTask> tasks,
-            String completionSign,
-            String firstAction
+            String context,
+            int pomodoroMinutes,
+            String chatId
     ) {
+        validatePomodoroMinutes(pomodoroMinutes);
+
+        if (goal == null || goal.isBlank()) {
+            throw new BusinessException(
+                    ErrorCode.PARAMS_ERROR,
+                    "任务目标不能为空"
+            );
+        }
+
+        String userMessage = """
+            本次目标：
+            %s
+
+            背景与约束：
+            %s
+            """.formatted(
+                goal,
+                context == null || context.isBlank()
+                        ? "无"
+                        : context
+        );
+
+
+        TomatoTaskPlan taskPlan;
+        try {
+            taskPlan = chatClient
+                    .prompt()
+                    .system(spec -> spec
+                            .text(
+                                    systemPrompt
+                                            + "\n\n"
+                                            + taskPlanFormatPrompt
+                            )
+                            .param(
+                                    "pomodoroMinutes",
+                                    pomodoroMinutes
+                            )
+                    )
+                    .user(userMessage)
+                    .advisors(spec ->
+                            spec.param(
+                                    ChatMemory.CONVERSATION_ID,
+                                    chatId
+                            )
+                    )
+                    .call()
+                    .entity(TomatoTaskPlan.class);
+        } catch (Exception exception) {
+            throw new BusinessException(
+                    ErrorCode.AI_RESPONSE_ERROR,
+                    "生成番茄任务清单失败",
+                    exception
+            );
+        }
+        validateTaskPlan(taskPlan, pomodoroMinutes);
+        return taskPlan;
+
     }
-    // 单个番茄任务
-    public record TomatoTask(
-            String title,
-            String action,
-            String output,
-            String completionCriteria,
-            int estimatedMinutes,
-            int pomodoroCount
+
+    // 校验番茄任务清单
+    private void validateTaskPlan(
+            TomatoTaskPlan taskPlan,
+            int pomodoroMinutes
     ) {
+        if (taskPlan == null) {
+            throw new BusinessException(
+                    ErrorCode.AI_RESPONSE_ERROR,
+                    "AI 返回的任务计划为空"
+            );
+        }
+
+        if (taskPlan.assumptions() == null) {
+            throw new BusinessException(
+                    ErrorCode.AI_RESPONSE_ERROR,
+                    "AI 返回的假设列表为空"
+            );
+        }
+
+        if (taskPlan.tasks() == null || taskPlan.tasks().isEmpty()) {
+            throw new BusinessException(
+                    ErrorCode.AI_RESPONSE_ERROR,
+                    "AI 未生成任何微任务"
+            );
+        }
+
+        for (TomatoTask task : taskPlan.tasks()) {
+            validateTomatoTask(task, pomodoroMinutes);
+        }
     }
+
+    // 校验番茄任务
+    private void validateTomatoTask(
+            TomatoTask task,
+            int pomodoroMinutes
+    ) {
+        if (task == null) {
+            throw new BusinessException(
+                    ErrorCode.AI_RESPONSE_ERROR,
+                    "AI 返回了空的微任务"
+            );
+        }
+
+        int estimatedMinutes = task.estimatedMinutes();
+        int pomodoroCount = task.pomodoroCount();
+
+        if (estimatedMinutes <= 0
+                || estimatedMinutes > pomodoroMinutes * 2) {
+            throw new BusinessException(
+                    ErrorCode.AI_RESPONSE_ERROR,
+                    "微任务预计时间必须大于 0，且不能超过两个番茄钟"
+            );
+        }
+
+        if (pomodoroCount < 1 || pomodoroCount > 2) {
+            throw new BusinessException(
+                    ErrorCode.AI_RESPONSE_ERROR,
+                    "微任务的番茄钟数量只能是 1 或 2"
+            );
+        }
+
+        int expectedPomodoroCount =
+                estimatedMinutes <= pomodoroMinutes ? 1 : 2;
+
+        if (pomodoroCount != expectedPomodoroCount) {
+            throw new BusinessException(
+                    ErrorCode.AI_RESPONSE_ERROR,
+                    "微任务预计时间与番茄钟数量不一致"
+            );
+        }
+    }
+
+
+
 
 
 

@@ -71,6 +71,12 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- 校验 Controller 接收到的请求参数 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
         <!-- ========== 2. 开发工具类库 ========== -->
         <!-- Lombok：编译期工具，用 @Data/@Getter 等注解自动生成
              getter/setter/构造方法，减少样板代码。

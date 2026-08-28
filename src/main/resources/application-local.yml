@@ -10,7 +10,9 @@ spring:
            model: qwen-plus
        # 不使用 DashScope Embedding 时可关闭
        embedding:
-         enabled: false
+         enabled: true
+         options:
+           model: text-embedding-v1
 
      # 模型二：你自己的 OpenAI 兼容 API
      openai:

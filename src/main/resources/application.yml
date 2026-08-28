@@ -15,6 +15,8 @@ ai:
     tomato-assistant:
       system-location: classpath:/prompts/tomato-assistant/tomato-assistant.md
       task-plan-format-location: classpath:/prompts/tomato-assistant/tomato-task-plan-format.md
+    customer-service:
+      system-location: classpath:/prompts/customer-service/customer-service.md
 
 # 内嵌 Web 服务器（Tomcat）的相关配置
 server:

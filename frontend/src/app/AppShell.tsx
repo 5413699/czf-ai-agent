@@ -1,9 +1,13 @@
-import { useEffect, type ReactNode } from 'react'
+import { lazy, Suspense, useEffect, type ReactNode } from 'react'
 import { BookOpen, Bot, CircleHelp, Focus, Leaf, Moon, Sun, Timer } from 'lucide-react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import type { Theme } from '../domain/models'
 import { usePreferencesStore } from '../features/preferences/preferences-store'
 import styles from './AppShell.module.css'
+
+const CustomerSupportWidget = lazy(
+  () => import('../components/customer-support/CustomerSupportWidget'),
+)
 
 const navigation = [
   { to: '/focus', label: '专注', icon: Focus },
@@ -23,6 +27,7 @@ const themeColors: Record<Theme, string> = {
 }
 
 export function AppShell({ children }: { children: ReactNode }) {
+  const location = useLocation()
   const theme = usePreferencesStore((state) => state.theme)
   const setTheme = usePreferencesStore((state) => state.setTheme)
   useEffect(() => {
@@ -49,7 +54,12 @@ export function AppShell({ children }: { children: ReactNode }) {
             <NavLink
               key={to}
               to={to}
-              className={({ isActive }) => (isActive ? styles.activeLink : styles.navLink)}
+              className={({ isActive }) => {
+                const workspaceActive =
+                  to === '/ai-studio' &&
+                  (location.pathname === '/ai-studio' || location.pathname === '/insights')
+                return isActive || workspaceActive ? styles.activeLink : styles.navLink
+              }}
             >
               <Icon size={17} />
               {label}
@@ -78,13 +88,21 @@ export function AppShell({ children }: { children: ReactNode }) {
           <NavLink
             key={to}
             to={to}
-            className={({ isActive }) => (isActive ? styles.mobileActive : '')}
+            className={({ isActive }) => {
+              const workspaceActive =
+                to === '/ai-studio' &&
+                (location.pathname === '/ai-studio' || location.pathname === '/insights')
+              return isActive || workspaceActive ? styles.mobileActive : ''
+            }}
           >
             <Icon size={20} />
             <span>{label}</span>
           </NavLink>
         ))}
       </nav>
+      <Suspense fallback={null}>
+        <CustomerSupportWidget />
+      </Suspense>
     </div>
   )
 }

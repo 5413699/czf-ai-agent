@@ -199,6 +199,13 @@ export default function FocusPage() {
     }
   }, [immersive, streamTheme, theme])
 
+  useEffect(() => {
+    document.documentElement.dataset.immersive = immersive ? 'true' : 'false'
+    return () => {
+      delete document.documentElement.dataset.immersive
+    }
+  }, [immersive])
+
   function applyPreset(preset: FocusPreset) {
     setActivePreset(preset.id)
     timerEngine.queueSettings(settingsFromPreset(preset))

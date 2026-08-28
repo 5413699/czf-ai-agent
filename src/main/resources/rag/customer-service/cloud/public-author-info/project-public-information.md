@@ -1,0 +1,33 @@
+---
+document_id: public-project-info-v1
+title: 番茄自习室项目公开信息与 GitHub 地址
+document_type: public-info
+knowledge_source: cloud-public-author-info
+module: project-info
+app_version: all
+platform: all
+language: zh-CN
+updated_at: 2026-08-25
+content_public: true
+raw_document_public: false
+allow_contact_disclosure: true
+tags: [项目地址, GitHub, 源代码, czf-ai-agent, 番茄自习室]
+aliases: [项目github链接, 源码在哪里, 仓库地址, 项目主页]
+---
+
+# 番茄自习室项目公开信息与 GitHub 地址
+
+## 已确认且允许公开的信息
+
+- 项目名称：`czf-ai-agent`。
+- GitHub 仓库：[https://github.com/5413699/czf-ai-agent](https://github.com/5413699/czf-ai-agent)
+- 是否允许公开：是。
+
+## 使用说明
+
+1. 用户询问项目源码、GitHub 或仓库地址时，可以直接返回上述完整链接。
+2. 用户反馈问题前，可以先查看仓库中当前公开的说明和问题记录。
+3. 不得把仓库地址扩展成未确认的演示站、文档站、Issue 模板或发布地址。
+4. 不得根据仓库用户名推断作者真实姓名、组织、其他账号或私人信息。
+5. 若用户询问当前公开资料未包含的项目状态、许可证、部署地址或发布日期，应明确回答“当前资料中无法确认”，并建议以 GitHub 仓库当前内容为准。
+

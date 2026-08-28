@@ -1,0 +1,44 @@
+catalog_version: 1
+updated_at: 2026-08-25
+default_language: zh-CN
+
+knowledge_sources:
+  - id: local-website-guide
+    path: local/website-guide
+    deployment: self-hosted
+    ingest: true
+    raw_document_public: false
+    route_when:
+      - website_concept
+      - website_operation
+      - website_troubleshooting
+
+  - id: cloud-public-author-info
+    path: cloud/public-author-info
+    deployment: aliyun-bailian
+    ingest: true
+    raw_document_public: false
+    route_when:
+      - author_public_info
+      - project_public_info
+
+  - id: local-pomodoro-method
+    path: local/pomodoro-method
+    deployment: self-hosted
+    ingest: true
+    raw_document_public: false
+    route_when:
+      - pomodoro_concept
+      - pomodoro_practice
+      - pomodoro_evidence
+      - pomodoro_tools
+
+answer_policy:
+  require_matching_knowledge: true
+  no_match_response: 当前资料中无法确认该问题。
+  expose_internal_path: false
+  expose_raw_chunk: false
+  expose_provider_configuration: false
+  only_return_public_contacts: true
+  distinguish_method_claims_from_research: true
+  require_public_source_for_external_citation: true

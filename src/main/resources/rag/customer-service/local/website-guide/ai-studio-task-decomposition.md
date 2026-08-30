@@ -1,28 +1,28 @@
 ---
 document_id: website-guide-ai-planner-v1
-title: 使用番茄智库拆解目标并保存任务
+title: 使用时栈台拆解目标并保存任务
 document_type: operation-guide
 knowledge_source: local-website-guide
 module: ai-studio
 app_version: "1.0.0"
 platform: all
 language: zh-CN
-updated_at: 2026-08-25
+updated_at: 2026-08-29
 content_public: true
 raw_document_public: false
-tags: [番茄智库, AI拆解, 目标拆解, 保存计划, AI服务离线]
-aliases: [如何使用番茄智库, AI工作台怎么用, 让AI生成任务, 保存AI计划]
+tags: [时栈台, AI拆解, 目标拆解, 保存计划, AI服务离线]
+aliases: [如何使用时栈台, 时栈台怎么用, 让AI生成任务, 保存AI计划]
 ---
 
-# 使用番茄智库拆解目标并保存任务
+# 使用时栈台拆解目标并保存任务
 
 ## 快速理解
 
-番茄智库不是替你完成项目，而是把“我要做一个很大的东西”改写成若干个有动作、有产出、有完成标准的小任务。
+时栈台不是替你完成项目，而是把“我要做一个很大的东西”改写成若干个有动作、有产出、有完成标准的小任务。
 
 ## 前置条件
 
-- 已进入“番茄智库”页面。
+- 已进入“时栈台”页面。
 - 页面右上角显示“AI 服务在线”。
 - 已选择专注时长为 5 至 120 分钟整数的方案。
 
@@ -54,4 +54,3 @@ aliases: [如何使用番茄智库, AI工作台怎么用, 让AI生成任务, 保
 - **直接拆解**：适合目标已经清楚的情况，一次提交后生成计划；该流程已有统一计划接口。
 - **Agent 梳理**：通过多轮对话收集目标、现状和约束，再邀请用户生成计划；它依赖额外的 Agent 后端接口和插件执行能力。
 - 页面出现 Agent 配置、工具或资料入口，不代表当前部署一定已启用相应后端能力。若 Agent 请求失败，应改用直接拆解，或联系部署维护者确认服务状态。
-

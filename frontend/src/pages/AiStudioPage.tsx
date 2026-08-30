@@ -603,7 +603,7 @@ export default function AiStudioPage() {
     <>
       <PageHeader
         eyebrow="AI STUDIO"
-        title="番茄智库"
+        title="时栈台"
         description="把目标交给 AI，按你熟悉的番茄节奏拆成今天就能开始的动作。"
         actions={
           <button

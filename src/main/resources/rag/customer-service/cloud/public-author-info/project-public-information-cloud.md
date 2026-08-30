@@ -1,20 +1,3 @@
----
-document_id: public-project-info-v1
-title: 时栈项目公开信息与 GitHub 地址
-document_type: public-info
-knowledge_source: cloud-public-author-info
-module: project-info
-app_version: all
-platform: all
-language: zh-CN
-updated_at: 2026-08-29
-content_public: true
-raw_document_public: false
-allow_contact_disclosure: true
-tags: [时栈, 项目地址, GitHub, 源代码, czf-ai-agent]
-aliases: [项目github链接, 源码在哪里, 仓库地址, 项目主页, 时栈项目]
----
-
 # 时栈项目公开信息与 GitHub 地址
 
 ## 已确认且允许公开的信息

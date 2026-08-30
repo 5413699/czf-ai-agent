@@ -122,6 +122,12 @@
             <artifactId>snakeyaml</artifactId>
         </dependency>
 
+        <!--    基于向量库进行检索增强问答    -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-advisors-vector-store</artifactId>
+        </dependency>
+
 
         <!-- ========== 3. AI 大模型 SDK ========== -->
         <!-- 阿里云百炼（DashScope）Java SDK：用于调用通义千问等大模型能力。
@@ -165,6 +171,9 @@
             <version>1.0.0-beta2</version>
         </dependency>
 
+
+
+
         <!-- ========== 4. 接口文档 ========== -->
         <!-- Knife4j：基于 OpenAPI3 的接口文档工具，启动后访问 /doc.html
              即可看到可视化、可调试的中文 API 文档，方便前后端联调。 -->
@@ -172,6 +181,15 @@
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
             <version>4.4.0</version>
+        </dependency>
+
+
+        <!-- 覆盖 Knife4j 4.4.0 传递引入的旧版 springdoc，
+     适配 Spring Boot 3.4 / Spring Framework 6.2。 -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.8.9</version>
         </dependency>
 
         <!-- ========== 5. 测试 ========== -->

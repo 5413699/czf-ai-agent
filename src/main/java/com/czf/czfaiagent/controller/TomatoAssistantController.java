@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.UUID;
 
 /**
- * 番茄助手 HTTP 接口。
+ * 时栈台助手 HTTP 接口。
  */
 //接收 HTTP 请求、返回数据（通常是 JSON）给前端的类。
 @RestController

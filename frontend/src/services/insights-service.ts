@@ -110,7 +110,7 @@ export function buildOfflineReport(
     .join('\n')
 
   return [
-    `# 番茄自习室${mode === 'daily' ? '日报' : '周报'}`,
+    `# 时栈${mode === 'daily' ? '日报' : '周报'}`,
     `统计周期：${period.label}`,
     '',
     `完成番茄：${records.length} 颗`,

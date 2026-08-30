@@ -36,14 +36,14 @@ interface CustomerSupportWidgetProps {
 const recommendedQuestions = [
   '如何开始一枚番茄？',
   '如何创建项目和任务？',
-  '如何使用番茄智库？',
+  '如何使用时栈台？',
   '数据保存在哪里？',
   '如何联系项目作者？',
   '项目的 GitHub 地址是什么？',
 ]
 
 const errorCopy: Record<NonNullable<SupportMessage['errorCode']>, string> = {
-  unavailable: '暂时无法连接番茄小助手，请检查网络后重试。',
+  unavailable: '暂时无法连接时栈小助手，请检查网络后重试。',
   timeout: '等待回答超时了。问题已保留，你可以重新发送。',
   internal: '回答生成时出现了问题，请稍后重试。',
 }
@@ -266,7 +266,7 @@ export default function CustomerSupportWidget({ streamOverride }: CustomerSuppor
       <button
         type="button"
         className={styles.launcher}
-        aria-label="打开番茄小助手"
+        aria-label="打开时栈小助手"
         aria-haspopup="dialog"
         onClick={() => setOpen(true)}
       >
@@ -289,7 +289,7 @@ export default function CustomerSupportWidget({ streamOverride }: CustomerSuppor
               <Sparkles size={20} />
             </div>
             <div>
-              <h2 id="support-title">番茄小助手</h2>
+              <h2 id="support-title">时栈小助手</h2>
               <p>功能与使用问题，随时问我</p>
             </div>
             <div className={styles.headerActions}>
@@ -306,7 +306,7 @@ export default function CustomerSupportWidget({ streamOverride }: CustomerSuppor
               <button
                 type="button"
                 className={styles.iconButton}
-                aria-label="关闭番茄小助手"
+                aria-label="关闭时栈小助手"
                 title="关闭"
                 onClick={() => setOpen(false)}
               >
@@ -338,8 +338,8 @@ export default function CustomerSupportWidget({ streamOverride }: CustomerSuppor
               <span className={styles.welcomeIcon} aria-hidden="true">
                 <Bot size={25} />
               </span>
-              <h3>你好，我是番茄小助手</h3>
-              <p>我可以回答番茄自习室的功能、数据保存和操作问题。</p>
+              <h3>你好，我是时栈小助手</h3>
+              <p>我可以回答时栈的功能、数据保存和操作问题。</p>
             </section>
 
             {messages.length === 0 ? (
@@ -394,7 +394,7 @@ export default function CustomerSupportWidget({ streamOverride }: CustomerSuppor
           <footer className={styles.composerArea}>
             <form className={styles.composer} onSubmit={submit}>
               <label className="sr-only" htmlFor="support-question">
-                向番茄小助手提问
+                向时栈小助手提问
               </label>
               <textarea
                 ref={textareaRef}

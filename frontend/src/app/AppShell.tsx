@@ -10,9 +10,9 @@ const CustomerSupportWidget = lazy(
 )
 
 const navigation = [
-  { to: '/focus', label: '专注', icon: Focus },
+  { to: '/focus', label: '入栈', icon: Focus },
   { to: '/tasks', label: '任务', icon: BookOpen },
-  { to: '/ai-studio', label: '番茄智库', icon: Bot },
+  { to: '/ai-studio', label: '时栈台', icon: Bot },
   { to: '/tutorial', label: '教程', icon: CircleHelp },
 ]
 const themes: Array<{ id: Theme; label: string; icon: typeof Sun }> = [
@@ -22,7 +22,7 @@ const themes: Array<{ id: Theme; label: string; icon: typeof Sun }> = [
 ]
 const themeColors: Record<Theme, string> = {
   night: '#0d1015',
-  day: '#f8fafc',
+  day: '#f5f7fb',
   eye: '#edf3e9',
 }
 
@@ -40,13 +40,13 @@ export function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className={styles.shell}>
       <header className={styles.header}>
-        <NavLink className={styles.brand!} to="/focus" aria-label="番茄自习室首页">
+        <NavLink className={styles.brand!} to="/focus" aria-label="时栈首页">
           <span className={styles.brandMark}>
             <Timer size={22} />
           </span>
           <span>
-            <strong>番茄自习室</strong>
-            <small>把时间种成成果</small>
+            <strong>时栈</strong>
+            <small>时间有痕，成果有栈</small>
           </span>
         </NavLink>
         <nav className={styles.desktopNav} aria-label="主导航">

@@ -48,7 +48,7 @@ describe('CustomerSupportWidget', () => {
     const user = userEvent.setup()
     render(<CustomerSupportWidget streamOverride={stream} />)
 
-    await user.click(screen.getByRole('button', { name: '打开番茄小助手' }))
+    await user.click(screen.getByRole('button', { name: '打开时栈小助手' }))
     await user.click(screen.getByRole('button', { name: '如何开始一枚番茄？' }))
     expect(await screen.findByText('进入专注页面，点击开始专注。')).toBeInTheDocument()
     expect(
@@ -75,7 +75,7 @@ describe('CustomerSupportWidget', () => {
     }
     const user = userEvent.setup()
     render(<CustomerSupportWidget streamOverride={stream} />)
-    await user.click(screen.getByRole('button', { name: '打开番茄小助手' }))
+    await user.click(screen.getByRole('button', { name: '打开时栈小助手' }))
     await user.click(screen.getByRole('button', { name: '如何开始一枚番茄？' }))
     await user.click(await screen.findByRole('button', { name: '停止生成' }))
 
@@ -91,9 +91,9 @@ describe('CustomerSupportWidget', () => {
       yield { type: 'complete', outcome: 'answered', sources: [] }
     }
     render(<CustomerSupportWidget streamOverride={stream} />)
-    fireEvent.click(screen.getByRole('button', { name: '打开番茄小助手' }))
+    fireEvent.click(screen.getByRole('button', { name: '打开时栈小助手' }))
     fireEvent.click(screen.getByRole('button', { name: '如何开始一枚番茄？' }))
-    await screen.findByText('暂时无法连接番茄小助手，请检查网络后重试。')
+    await screen.findByText('暂时无法连接时栈小助手，请检查网络后重试。')
     fireEvent.click(screen.getByRole('button', { name: '重试原问题' }))
 
     await waitFor(() => expect(screen.getByText('连接恢复。')).toBeInTheDocument())

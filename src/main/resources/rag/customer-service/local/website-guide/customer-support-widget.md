@@ -1,20 +1,20 @@
 ---
 document_id: website-guide-customer-support-v1
-title: 使用番茄小助手提问、重试和清空会话
+title: 使用时栈小助手提问、重试和清空会话
 document_type: operation-guide
 knowledge_source: local-website-guide
 module: customer-support
 app_version: "1.0.0"
 platform: all
 language: zh-CN
-updated_at: 2026-08-25
+updated_at: 2026-08-29
 content_public: true
 raw_document_public: false
-tags: [智能客服, 番茄小助手, 推荐问题, 流式回答, 重试, 清空会话]
-aliases: [怎么问客服, 客服没回答, 停止生成, 清除聊天记录, 推荐问题]
+tags: [智能客服, 时栈小助手, 推荐问题, 流式回答, 重试, 清空会话]
+aliases: [如何使用时栈小助手, 客服怎么提问, 客服如何重试, 怎么问客服, 客服没回答, 停止生成, 清除聊天记录, 推荐问题]
 ---
 
-# 使用番茄小助手提问、重试和清空会话
+# 使用时栈小助手提问、重试和清空会话
 
 ## 前置条件
 
@@ -48,4 +48,3 @@ aliases: [怎么问客服, 客服没回答, 停止生成, 清除聊天记录, �
 - 前端不会直接访问知识库，也不应显示知识库 ID、向量、内部切片、服务端配置或供应商密钥。
 - 来源链接只有在明确标记为公开时才应显示。
 - 客服找不到可靠资料时必须说明无法确认，不能编造操作步骤。
-

@@ -24,6 +24,7 @@ import {
   X,
 } from 'lucide-react'
 import { PageHeader } from '../components/PageHeader'
+import { assetUrl } from '../infrastructure/assets'
 import type { Project, ResourceLink, Subtask, Task } from '../domain/models'
 import {
   findPresetById,
@@ -493,7 +494,14 @@ export default function TasksPage() {
       </div>
       {projects.length === 0 ? (
         <section className={styles.emptyHero}>
-          <img src="/assets/images/tomatoes/tomato-basket.svg" alt="一篮番茄" />
+          <img
+            src={assetUrl('/assets/images/tomatoes/tomato-basket.svg')}
+            alt="一篮番茄"
+            width={176}
+            height={132}
+            loading="lazy"
+            decoding="async"
+          />
           <div>
             <span>从一个清楚的方向开始</span>
             <h2>建立你的第一个学习项目</h2>

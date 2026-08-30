@@ -12,8 +12,8 @@ const tabs = [
 
 export function AiWorkspaceTabs({ active }: { active: AiWorkspaceView }) {
   return (
-    <nav className={styles.tabs} aria-label="番茄智舱">
-      <span>番茄智舱</span>
+    <nav className={styles.tabs} aria-label="时栈台">
+      <span>时栈台</span>
       <div>
         {tabs.map((tab) => {
           const Icon = tab.icon

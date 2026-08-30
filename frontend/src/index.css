@@ -2,50 +2,74 @@
   font-family: 'Microsoft YaHei UI', 'PingFang SC', 'Noto Sans CJK SC', system-ui, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --canvas: #f8fafc;
+  --canvas: #f5f7fb;
   --surface: #ffffff;
   --surface-soft: #f1f5f9;
   --surface-strong: #e7edf3;
   --text: #172033;
   --muted: #657084;
   --line: #dfe5eb;
-  --accent: #ef4e4e;
-  --accent-strong: #d9343e;
-  --accent-soft: #fff0ed;
-  --second: #256e71;
+  --accent: #27324a;
+  --accent-strong: #1d263a;
+  --accent-soft: #e9edf5;
+  --second: #9a6b1f;
+  --brand: #27324a;
+  --brand-strong: #1d263a;
+  --brand-soft: #e9edf5;
+  --time-accent: #d39a32;
+  --focus: #e5534b;
+  --focus-soft: #fff0ed;
+  --grid-line: #d8dfeb;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
   --success: #23855b;
   --shadow: 0 12px 36px rgba(30, 42, 64, 0.08);
   --shadow-lg: 0 18px 55px rgba(30, 42, 64, 0.14);
 }
 :root[data-theme='night'] {
-  --canvas: #0d1015;
-  --surface: #161a21;
-  --surface-soft: #1c212a;
-  --surface-strong: #282e39;
+  --canvas: #0b1020;
+  --surface: #151c2f;
+  --surface-soft: #1b253b;
+  --surface-strong: #27324a;
   --text: #f6f4ef;
   --muted: #9ba4b3;
   --line: #2a303a;
-  --accent: #ff665e;
-  --accent-strong: #ff8178;
-  --accent-soft: #34201f;
+  --accent: #d8b05c;
+  --accent-strong: #edc873;
+  --accent-soft: #302b20;
+  --brand: #aebee0;
+  --brand-strong: #d8e2f7;
+  --brand-soft: #202b44;
+  --time-accent: #e7bb5c;
+  --focus: #ef766d;
+  --focus-soft: #3b2529;
+  --grid-line: #303d59;
   --second: #6fc6bd;
   --success: #69c491;
   --shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 18px 55px rgba(0, 0, 0, 0.5);
 }
 :root[data-theme='eye'] {
-  --canvas: #edf3e9;
+  --canvas: #eef5ec;
   --surface: #f8fbf5;
   --surface-soft: #e6efe1;
   --surface-strong: #dbe8d5;
   --text: #183426;
   --muted: #607565;
   --line: #cad8c4;
-  --accent: #328253;
-  --accent-strong: #24683f;
+  --accent: #2f7250;
+  --accent-strong: #245d3e;
   --accent-soft: #dcecdf;
-  --second: #577d3d;
-  --success: #328253;
+  --second: #557642;
+  --success: #2f7250;
+  --brand: #285b42;
+  --brand-strong: #1d4d35;
+  --brand-soft: #dcecdf;
+  --time-accent: #92742b;
+  --focus: #3c8057;
+  --focus-soft: #dcecdf;
+  --grid-line: #c7d9c8;
   --shadow: 0 12px 36px rgba(47, 81, 53, 0.09);
   --shadow-lg: 0 18px 55px rgba(47, 81, 53, 0.16);
 }
@@ -85,6 +109,9 @@ button {
     transform 0.18s ease,
     background 0.18s ease,
     border-color 0.18s ease;
+}
+.brandMark {
+  color: #fff;
 }
 button:hover {
   transform: translateY(-1px);

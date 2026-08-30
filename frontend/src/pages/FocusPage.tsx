@@ -460,9 +460,9 @@ export default function FocusPage() {
   return (
     <>
       <PageHeader
-        eyebrow="FOCUS ROOM"
-        title="今天，种下一颗专注"
-        description="选择手头的任务，按一次开始。专注与休息自然循环，完成记录自动回到任务进度。"
+        eyebrow="TIME STACK / 入栈"
+        title="入栈一段专注"
+        description="用一段专注留下时间切片，完成后自动沉淀到任务进度。"
         actions={
           <button type="button" className={styles.ghostButton} onClick={() => setImmersive(true)}>
             <Expand size={17} />

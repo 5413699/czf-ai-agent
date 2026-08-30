@@ -26,7 +26,7 @@ public class TomatoAssistantApp {
 
     // 调用模型
     private final ChatClient chatClient;
-    // 番茄助手角色与拆解规则
+    // 时栈台助手角色与拆解规则
     private final String systemPrompt;
     // 结构化输出字段要求
     private final String taskPlanFormatPrompt;

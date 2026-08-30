@@ -28,4 +28,16 @@ spring:
        embedding:
          enabled: false
 
+# 百炼知识库
+ai:
+  rag:
+    cloud:
+      enabled: true
+      index-name: public-author-info
+      dense-similarity-top-k: 4
+      sparse-similarity-top-k: 4
+      enable-rewrite: false
+      enable-reranking: false
+      rerank-top-n: 3
+
 

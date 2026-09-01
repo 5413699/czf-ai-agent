@@ -1,11 +1,15 @@
 package com.czf.czfaiagent.rag;
 
+import com.czf.czfaiagent.rag.etl.CustomerServiceDocumentLoader;
+import com.czf.czfaiagent.rag.etl.CustomerServiceSourceDocument;
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.document.Document;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import org.springframework.core.io.ByteArrayResource;
@@ -38,7 +42,10 @@ class CustomerServiceDocumentLoaderTest {
      */
     @Test
     void shouldLoadLocalMarkdownDocuments() {
-        List<Document> documents = documentLoader.loadMarkdowns();
+        List<CustomerServiceSourceDocument> sourceDocuments = documentLoader.loadMarkdowns();
+        List<Document> documents = sourceDocuments.stream()
+                .flatMap(source -> source.chunks().stream())
+                .collect(Collectors.toList());
 
         // 1.本地知识库路径必须至少加载出一个 Spring AI Document。
         assertFalse(documents.isEmpty());
@@ -56,9 +63,42 @@ class CustomerServiceDocumentLoaderTest {
                 .allMatch(document ->
                         document.getMetadata().containsKey("document_id")
                                 && document.getMetadata().containsKey("knowledge_source")
+                                && document.getMetadata().containsKey("source_id")
+                );
+        boolean sourceIdMatchesDocumentId = documents.stream()
+                .allMatch(document ->
+                        Objects.equals(
+                                document.getMetadata().get("document_id"),
+                                document.getMetadata().get("source_id")
+                        )
                 );
 
-        assertTrue(frontMatterAttachedToMetadata);
+        assertTrue(
+                sourceIdMatchesDocumentId,
+                "每个切片的 source_id 必须与 Front Matter 中的 document_id 一致"
+        );
+
+
+
+        assertTrue(
+                frontMatterAttachedToMetadata,
+                "每个切片都必须继承 document_id、knowledge_source、source_id 三项元数据"
+        );
+
+        // 4.每个切片都必须带有稳定的向量 ID。
+        //    稳定 ID 的格式为「sourceId#chunk-N」，作用是实现幂等入库：
+        //    应用重启后重新写入向量库时，相同 ID 会被更新（upsert）而不是重复插入，
+        //    从而避免知识库数据无限膨胀。
+        boolean vectorIdExists = documents.stream()
+                .allMatch(document ->
+                        document.getMetadata().containsKey("vector_id")
+                                && document.getId().equals(
+                                document.getMetadata().get("vector_id")
+                        )
+                );
+
+        assertTrue(vectorIdExists);
+
 
         // 4.本地加载器不能加载计划由云知识库管理的作者公开信息
         boolean cloudKnowledgeExcluded = documents.stream()
@@ -111,10 +151,14 @@ class CustomerServiceDocumentLoaderTest {
                         resourcePatternResolver
                 );
 
-        List<Document> documents = loader.loadMarkdowns();
+        List<CustomerServiceSourceDocument> sourceDocuments = loader.loadMarkdowns();
+        List<Document> documents = sourceDocuments.stream()
+                .flatMap(source -> source.chunks().stream())
+                .collect(Collectors.toList());
 
         assertFalse(documents.isEmpty());
 
+        // 验证元数据是否正确解析
         boolean metadataParsed = documents.stream()
                 .allMatch(document ->
                         "test-windows-line-endings".equals(
@@ -122,6 +166,15 @@ class CustomerServiceDocumentLoaderTest {
                         )
                 );
 
+        // 验证source_id和document_id是否一致
+        boolean sourceIdMatchesDocumentId = documents.stream()
+                .allMatch(document ->
+                        "test-windows-line-endings".equals(
+                                document.getMetadata().get("source_id")
+                        )
+                );
+
+        assertTrue(sourceIdMatchesDocumentId);
         assertTrue(metadataParsed);
 
         boolean frontMatterExcluded = documents.stream()
@@ -130,6 +183,20 @@ class CustomerServiceDocumentLoaderTest {
                 );
 
         assertTrue(frontMatterExcluded);
+    }
+
+    @Test
+    void shouldCalculateHashBeforeChunkingAndAttachItToChunks() {
+        List<CustomerServiceSourceDocument> sourceDocuments = documentLoader.loadMarkdowns();
+
+        assertFalse(sourceDocuments.isEmpty());
+        assertTrue(sourceDocuments.stream().allMatch(source ->
+                source.contentHash().length() == 64
+                        && source.chunks().stream().allMatch(chunk ->
+                        source.contentHash().equals(
+                                chunk.getMetadata().get("content_hash")
+                        ))
+        ));
     }
 
 

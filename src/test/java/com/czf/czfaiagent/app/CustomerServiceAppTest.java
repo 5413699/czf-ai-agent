@@ -16,13 +16,19 @@ public class CustomerServiceAppTest {
 
     @Test
     void doChatWithRag() {
+        String chatId = "rag-rewrite-001";
 
-        String message = "番茄钟必须严格固定为 25 分钟吗";
-        String chatId = "rag-learning-002";
-        String answer = customerServiceApp.doChatWithRag(message,chatId);
+        customerServiceApp.doChatWithRag(
+                "我在专注页面看到很多方案，我可以自己设置方案吗",
+                chatId
+        );
+
+        String answer = customerServiceApp.doChatWithRag(
+                "页面元素太多了，有没有办法能够屏蔽掉页面元素，让我专注番茄钟计时？",
+                chatId
+        );
+
         Assertions.assertNotNull(answer);
-
     }
-
 
 }

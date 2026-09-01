@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS rag_document_manifest
+(
+    source_id   VARCHAR(500) PRIMARY KEY,
+    content_hash CHAR(64) NOT NULL,
+    vector_ids  JSONB NOT NULL DEFAULT '[]'::jsonb,
+    chunk_count INTEGER NOT NULL DEFAULT 0,
+    status      VARCHAR(32) NOT NULL DEFAULT 'ACTIVE',
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at  TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );

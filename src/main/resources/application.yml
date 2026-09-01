@@ -7,6 +7,11 @@ spring:
   profiles:
     active: local
 
+# 数据库配置
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+
+
 # 提示词配置
 ai:
   prompts:

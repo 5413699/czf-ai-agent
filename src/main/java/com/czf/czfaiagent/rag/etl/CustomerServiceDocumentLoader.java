@@ -1,4 +1,4 @@
-package com.czf.czfaiagent.rag;
+package com.czf.czfaiagent.rag.etl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.document.Document;
@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.HexFormat;
 import org.springframework.core.io.ByteArrayResource;
 
 
@@ -136,9 +139,8 @@ public class CustomerServiceDocumentLoader {
      * 加载多篇 Markdown 文档
      * @return allDocuments 所有文档
      */
-    public List<Document> loadMarkdowns() {
-        // 文档列表
-        List<Document> allDocuments = new ArrayList<>();
+    public List<CustomerServiceSourceDocument> loadMarkdowns() {
+        List<CustomerServiceSourceDocument> sourceDocuments = new ArrayList<>();
 
         // 加载多篇文档
         try {
@@ -151,12 +153,22 @@ public class CustomerServiceDocumentLoader {
                 );
                 // 将带yaml头的md文件内容解析为文件体和文件头
                 ParsedMarkdown parsedMarkdown = parseFrontMatter(rawText);
+                String normalizedBody = normalizeText(parsedMarkdown.body());
+                String contentHash = calculateContentHash(normalizedBody);
                 // 将文件体转换为字节数组资源
                 Resource bodyResource = new ByteArrayResource(
                         parsedMarkdown.body().getBytes(StandardCharsets.UTF_8)
                 );
 
                 String filename = resource.getFilename();
+                // 如果 Front Matter 中有 document_id：使用 document_id 作为 source_id
+                // 如果没有 document_id：暂时使用文件名作为 source_id
+                // source_id 用于在postgresql标识文档的唯一性，在向量检索/过滤时非常有用。
+                Object documentId = parsedMarkdown.metadata().get("document_id");
+                String sourceId = documentId == null
+                        ? filename
+                        : documentId.toString();
+
 
                 // 配置MarkdownDocumentReader
                 MarkdownDocumentReaderConfig config = MarkdownDocumentReaderConfig.builder()
@@ -170,13 +182,54 @@ public class CustomerServiceDocumentLoader {
                         // 将文件名和md文件的yaml头部作为元数据保存。
                         .withAdditionalMetadata(parsedMarkdown.metadata())
                         .withAdditionalMetadata("filename", filename)
+                        .withAdditionalMetadata("source_id", sourceId)
                         .build();
+                // 使用MarkdownDocumentReader读取markdown文件
                 MarkdownDocumentReader markdownDocumentReader = new MarkdownDocumentReader(bodyResource, config);
-                allDocuments.addAll(markdownDocumentReader.get());
+                List<Document> chunks = markdownDocumentReader.get();
+
+                for (int chunkIndex = 0; chunkIndex < chunks.size(); chunkIndex++) {
+                    Document chunk = chunks.get(chunkIndex);
+
+                    String vectorId = sourceId + "#chunk-" + chunkIndex;
+
+                    Document stableChunk = chunk.mutate()
+                            .id(vectorId)
+                            .metadata("vector_id", vectorId)
+                            .metadata("content_hash", contentHash)
+                            .build();
+
+                    chunks.set(chunkIndex, stableChunk);
+                }
+
+                sourceDocuments.add(new CustomerServiceSourceDocument(
+                        sourceId,
+                        filename,
+                        contentHash,
+                        chunks
+                ));
+
             }
         } catch (IOException e) {
             log.error("Markdown 文档加载失败", e);
         }
-        return allDocuments;
+        return sourceDocuments;
+    }
+
+    private String normalizeText(String text) {
+        return text
+                .replace("\r\n", "\n")
+                .replace('\r', '\n')
+                .trim();
+    }
+
+    private String calculateContentHash(String normalizedContent) {
+        try {
+            byte[] digest = MessageDigest.getInstance("SHA-256")
+                    .digest(normalizedContent.getBytes(StandardCharsets.UTF_8));
+            return HexFormat.of().formatHex(digest);
+        } catch (NoSuchAlgorithmException e) {
+            throw new IllegalStateException("SHA-256 算法不可用", e);
+        }
     }
 }

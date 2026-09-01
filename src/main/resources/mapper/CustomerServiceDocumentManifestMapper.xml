@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--必须与 Java Mapper 接口的全限定名完全一致：-->
+<mapper namespace="com.czf.czfaiagent.rag.etl.CustomerServiceDocumentManifestMapper">
+
+    <resultMap id="CustomerServiceDocumentManifestResultMap"
+               type="com.czf.czfaiagent.rag.etl.CustomerServiceDocumentManifest">
+
+        <constructor>
+            <idArg column="source_id"
+                   javaType="java.lang.String"/>
+
+            <arg column="content_hash"
+                 javaType="java.lang.String"/>
+
+            <arg column="vector_ids"
+                 javaType="java.util.List"
+                 typeHandler="com.czf.czfaiagent.rag.etl.CustomerServiceVectorIdsTypeHandler"/>
+
+            <!-- _int 表示 Java 原始类型 int，必须与 record 构造器精确匹配。 -->
+            <arg column="chunk_count"
+                 javaType="_int"/>
+
+            <arg column="status"
+                 javaType="java.lang.String"/>
+
+            <arg column="created_at"
+                 javaType="java.time.OffsetDateTime"/>
+
+            <arg column="updated_at"
+                 javaType="java.time.OffsetDateTime"/>
+        </constructor>
+
+    </resultMap>
+
+    <!--  findAllActive  -->
+    <select id="findAllActive"
+            resultMap="CustomerServiceDocumentManifestResultMap">
+
+        SELECT source_id,
+        content_hash,
+        vector_ids,
+        chunk_count,
+        status,
+        created_at,
+        updated_at
+        FROM rag_document_manifest
+        WHERE status = 'ACTIVE'
+        ORDER BY source_id
+
+    </select>
+
+    <insert id="save"
+            parameterType="com.czf.czfaiagent.rag.etl.CustomerServiceDocumentManifest">
+
+        INSERT INTO rag_document_manifest
+        (
+        source_id,
+        content_hash,
+        vector_ids,
+        chunk_count,
+        status,
+        created_at,
+        updated_at
+        )
+        VALUES
+        (
+        #{sourceId},
+        #{contentHash},
+        #{vectorIds,
+         typeHandler=com.czf.czfaiagent.rag.etl.CustomerServiceVectorIdsTypeHandler},
+        #{chunkCount},
+        #{status},
+        #{createdAt},
+        #{updatedAt}
+        )
+        ON CONFLICT (source_id)
+        DO UPDATE SET
+        content_hash = EXCLUDED.content_hash,
+        vector_ids = EXCLUDED.vector_ids,
+        chunk_count = EXCLUDED.chunk_count,
+        status = EXCLUDED.status,
+        updated_at = EXCLUDED.updated_at
+
+    </insert>
+
+    <update id="markDeleted">
+
+        UPDATE rag_document_manifest
+        SET status = 'DELETED',
+        updated_at = #{updatedAt}
+        WHERE source_id = #{sourceId}
+        AND status = 'ACTIVE'
+
+    </update>
+
+</mapper>
